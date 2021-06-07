@@ -1,0 +1,23 @@
+:root {
+  --color-main: #0041A0;
+  --color-main-black: #262626;
+  --color-white: #FFFFFF;
+  // --color-background-main: #f0f4f7;
+  // --shadow-light: rgba(0, 0, 0, 0.17);
+  // --font-default: Vazir, sans-serif;
+}
+
+$main: var(--color-main);
+$main-black: var(--color-main-black);
+$white: var(--color-white);
+
+$divier-border: 1px solid rgba(#262626, 0.2);
+
+// standard bootstrap breakpoints
+$breakpoints: (
+    'sm': 576px,
+    'md': 768px,
+    'lg': 992px,
+    'xl': 1200px,
+    'xxl': 1400px,
+);

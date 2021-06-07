@@ -1,9 +1,167 @@
 <template>
-  <div>Footer</div>
+  <div class="Footer">
+    <Container class="Footer__container">
+      <Logo class="Footer__logo" />
+      <Navigation variant="footer" />
+      <div v-if="contactInfo.length" class="Footer__contactInfo">
+        <div
+          v-for="item in contactInfo"
+          :key="item.text"
+          class="Footer__contactItem"
+        >
+          <Icon :name="item.icon" class="Footer__contactItemIcon" />
+          <p>{{ item.text }}</p>
+        </div>
+      </div>
+      <div class="Footer__socialAndRights">
+        <div />
+        <p class="Footer__rights">
+          © 2021 BENT OAKS SYSTEMS. All rights reserved
+        </p>
+        <div class="Footer__socialMediaLinkList">
+          <a
+            v-for="link in socialMediaContacts"
+            :key="link.label"
+            :href="link.to"
+            class="Footer__socialMediaLink"
+          >
+            <Icon :name="link.icon" />
+          </a>
+        </div>
+      </div>
+    </Container>
+  </div>
 </template>
 
 <script>
-export default {}
+export default {
+  computed: {
+    contactInfo() {
+      return [
+        {
+          text: '+447782827075',
+          icon: 'phone',
+        },
+        {
+          text: '20-22 Wenlock Road, London, N1 7GU',
+          icon: 'pin',
+        },
+      ]
+    },
+    socialMediaContacts() {
+      return [
+        {
+          icon: 'linkedin',
+          label: 'LinkedIn',
+          to: 'https://linkedin.com',
+        },
+        {
+          icon: 'instagram',
+          label: 'Instagram',
+          to: 'https://instagram.com',
+        },
+        {
+          icon: 'facebook',
+          label: 'Facebook',
+          to: 'https://facebook.com',
+        },
+        {
+          icon: 'twitter',
+          label: 'Twitter',
+          to: 'https://twitter.com',
+        },
+      ]
+    },
+  },
+}
 </script>
 
-<style></style>
+<style lang="scss">
+.Footer {
+  position: relative;
+  overflow: hidden;
+  padding: 36px 0;
+  background-image: url('~/assets/images/footerBGVertical.png');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-bottom: 28px;
+  }
+
+  &__contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+    width: 100%;
+  }
+
+  &__contactItem {
+    display: flex;
+    align-items: center;
+    @include fontSize(14px);
+    font-weight: 500;
+  }
+
+  &__contactItemIcon {
+    @include square(18px);
+    margin-right: 8px;
+  }
+
+  &__socialAndRights {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 146px;
+    padding: 2px 0;
+    width: 100%;
+  }
+
+  &__rights {
+    @include fontSize(14px);
+    font-weight: 500;
+  }
+
+  &__socialMediaLinkList {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__socialMediaLink {
+    &:nth-child(n + 2) {
+      margin-left: 16px;
+    }
+  }
+
+  &__socialMediaIcon {
+    @include square(24px);
+  }
+
+  @include respondTo(md) {
+    background-image: url('~/assets/images/footerBG.png');
+
+    &__contactInfo {
+      align-items: flex-start;
+      margin-top: 12px;
+      border-bottom: $divier-border;
+    }
+
+    &__socialAndRights {
+      flex-direction: row;
+      margin-top: unset;
+
+      & > * {
+        flex: 1;
+      }
+    }
+  }
+}
+</style>

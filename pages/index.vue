@@ -1,11 +1,15 @@
 <template>
-  <div class="container">Home</div>
+  <div>
+    <Container>
+      <GradientBorder> Home </GradientBorder>
+    </Container>
+  </div>
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
-
-export default Vue.extend({})
+export default {
+  name: 'Home',
+}
 </script>
 
 <style></style>

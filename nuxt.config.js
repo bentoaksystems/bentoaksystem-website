@@ -1,3 +1,5 @@
+import messages from './locales/index.js'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -17,10 +19,18 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/styles/index.scss'],
 
+  // Makes added resources available in vue components
+  styleResources: {
+    scss: [
+      '~/assets/styles/_functions.scss',
+      '~/assets/styles/_variables.scss',
+      '~/assets/styles/_mixins.scss',
+    ],
+  },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/vue-screen.js', '~/plugins/dropdownMenu.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
@@ -35,7 +45,40 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/style-resources',
+    'nuxt-i18n',
   ],
+
+  i18n: {
+    locales: [
+      {
+        code: 'en',
+        name: 'English',
+        icon: 'english',
+      },
+      {
+        code: 'de',
+        name: 'Deutsche',
+        icon: 'german',
+      },
+      {
+        code: 'fr',
+        name: 'Français',
+        icon: 'french',
+      },
+      {
+        code: 'es',
+        name: 'Español',
+        icon: 'spanish',
+      },
+    ],
+    defaultLocale: 'en',
+    strategy: 'prefix_and_default',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages,
+    },
+  },
 
   // Content module configuration: https://go.nuxtjs.dev/config-content
   content: {},

@@ -1,21 +1,31 @@
 <template>
   <div>
-    <Header />
-    <Nuxt />
+    <Header class="DefaultLayout__header" />
+    <Nuxt class="DefaultLayout__body" />
     <Footer />
   </div>
 </template>
 
 <script>
-import Header from '~/components/Header'
-import Footer from '~/components/Footer'
-
-export default {
-  components: {
-    Header,
-    Footer,
-  },
-}
+export default {}
 </script>
 
-<style></style>
+<style lang="scss">
+.DefaultLayout {
+  --headerHeight: 56px;
+
+  &__header {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__body {
+    margin-top: calc(var(--headerHeight) * -1);
+    padding-top: var(--headerHeight);
+  }
+
+  @include respondTo(md) {
+    --headerHeight: 112px;
+  }
+}
+</style>

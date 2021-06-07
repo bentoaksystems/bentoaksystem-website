@@ -1,0 +1,19 @@
+@mixin fontSize($value) {
+  font-size: $value;
+  font-size: px-to-rem($value);
+}
+
+@mixin square($side) {
+  width: $side;
+  height: $side;
+}
+
+@mixin respondTo($name) {
+  @if (map-has-key($breakpoints, $name)) {
+    @media (min-width: #{inspect(map-get($breakpoints, $name))}) {
+      @content;
+    }
+  } @else {
+    @warn ('invalid breakpoint name');
+  }
+}
