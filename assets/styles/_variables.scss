@@ -1,15 +1,28 @@
 :root {
-  --color-main: #0041A0;
-  --color-main-black: #262626;
+  --color-blue: #0041A0;
+  --color-light-blue: #92D0EE;
+  --color-yellow: #FEBF3D;
+  --color-red: #8E0033;
+  --color-dark-grey: #262626;
   --color-white: #FFFFFF;
-  // --color-background-main: #f0f4f7;
-  // --shadow-light: rgba(0, 0, 0, 0.17);
-  // --font-default: Vazir, sans-serif;
 }
 
-$main: var(--color-main);
-$main-black: var(--color-main-black);
+$blue: var(--color-blue);
+$light-blue: var(--color-light-blue);
+$yellow: var(--color-yellow);
+$red: var(--color-red);
+$dark-grey: var(--color-dark-grey);
 $white: var(--color-white);
+
+
+$gradient1: linear-gradient(90deg, #0041A0 0%, #007FBF 100%);
+$gradient2: linear-gradient(90deg, #8BC6E3 0%, #007FBF 100%);
+$gradient3: linear-gradient(180deg, #8E0033 0%, #BF0020 100%);
+$gradient4: linear-gradient(180deg, #FEBF3D 0%, #FFF499 100%);
+$gradient5: linear-gradient(290deg, rgba(0, 152, 205, 0.7) 24.01%, rgba(0, 127, 191, 0.7) 33.2%, rgba(0, 98, 186, 0.7) 36.56%, rgba(0, 65, 160, 0.7) 38.81%, rgba(185, 0, 211, 0.49) 44.15%, rgba(149, 0, 175, 0.7) 46.4%, rgba(137, 0, 170, 0.7) 48.98%, rgba(102, 0, 95, 0.7) 51.16%, rgba(115, 0, 124, 0.7) 53.93%, rgba(155, 0, 48, 0.7) 56.88%, rgba(142, 0, 51, 0.7) 59.38%, rgba(163, 5, 35, 0.7) 62.29%, rgba(191, 0, 32, 0.7) 64.95%, rgba(226, 0, 33, 0.7) 68.43%, rgba(249, 0, 0, 0.7) 71.23%, rgba(233, 93, 23, 0.7) 74.98%, rgba(238, 116, 52, 0.7) 78.47%, rgba(242, 142, 0, 0.7) 83.27%, rgba(249, 175, 0, 0.7) 86.22%, rgba(254, 184, 38, 0.7) 89.29%);
+$gradient6: linear-gradient(90deg, #8BC6E3 0%, rgba(189, 216, 230, 0.12) 0.01%, rgba(139, 198, 227, 0) 100%);
+$gradientCTA: linear-gradient(80.45deg, rgba(185, 0, 211, 0.8) -104.27%, rgba(0, 65, 160, 0.8) 60.74%, rgba(0, 65, 160, 0.8) 84.34%);
+
 
 $divier-border: 1px solid rgba(#262626, 0.2);
 

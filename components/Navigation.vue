@@ -79,7 +79,7 @@ export default {
   &__item {
     display: flex;
     align-items: center;
-    color: $main;
+    color: $blue;
     font-weight: 500;
     @include fontSize(16px);
 
@@ -92,7 +92,7 @@ export default {
     }
 
     &--footer {
-      color: $main-black;
+      color: $dark-grey;
     }
   }
 
