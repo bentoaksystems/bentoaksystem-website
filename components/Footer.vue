@@ -53,22 +53,22 @@ export default {
         {
           icon: 'linkedin',
           label: 'LinkedIn',
-          to: 'https://linkedin.com',
+          to: 'https://www.linkedin.com/company/bent-oak-systems/about/',
         },
         {
           icon: 'instagram',
           label: 'Instagram',
-          to: 'https://instagram.com',
+          to: 'https://www.instagram.com/bentoaksystems/',
         },
         {
           icon: 'facebook',
           label: 'Facebook',
-          to: 'https://facebook.com',
+          to: 'https://www.facebook.com/Bentoaksystems',
         },
         {
           icon: 'twitter',
           label: 'Twitter',
-          to: 'https://twitter.com',
+          to: 'https://twitter.com/bentoaksystems',
         },
       ]
     },
