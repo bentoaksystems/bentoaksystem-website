@@ -1,5 +1,5 @@
 <template>
-  <NuxtLink to="/">
+  <NuxtLink :to="localePath('/')">
     <img
       v-if="hasText"
       src="~/assets/images/bosLogoWithText.svg"
