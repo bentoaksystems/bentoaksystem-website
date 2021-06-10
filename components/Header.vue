@@ -3,7 +3,7 @@
     <Logo class="Header__logo" has-text />
     <template v-if="!$screen.md">
       <Icon name="menu" @click.native="isMobileMenuOpen = true" />
-      <HeaderMobileMenu
+      <HeaderMenuMobile
         :is-open="isMobileMenuOpen"
         @close="isMobileMenuOpen = false"
       />

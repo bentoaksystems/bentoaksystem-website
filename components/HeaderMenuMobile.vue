@@ -1,15 +1,18 @@
 <template>
-  <div class="HeaderMobileMenu" :class="{ 'HeaderMobileMenu--closed': isOpen }">
-    <GradientBorder class="HeaderMobileMenu__gradientBorder">
-      <div class="HeaderMobileMenu__mainContainer">
+  <div class="HeaderMenuMobile" :class="{ 'HeaderMenuMobile--closed': isOpen }">
+    <GradientBorder class="HeaderMenuMobile__gradientBorder">
+      <div class="HeaderMenuMobile__mainContainer">
         <div>
           <SwitchLocale />
         </div>
-        <div class="HeaderMobileMenu__midCol">
-          <Navigation class="HeaderMobileMenu__navList" />
-          <BaseButton class="HeaderMobileMenu__CTA"> Call us </BaseButton>
+        <div class="HeaderMenuMobile__midCol">
+          <Navigation
+            variant="headerMenuMobile"
+            class="HeaderMenuMobile__navList"
+          />
+          <BaseButton class="HeaderMenuMobile__CTA"> Call us </BaseButton>
         </div>
-        <div class="HeaderMobileMenu__lastCol">
+        <div class="HeaderMenuMobile__lastCol">
           <Icon name="exit" @click.native="$emit('close')" />
         </div>
       </div>
@@ -29,7 +32,7 @@ export default {
 </script>
 
 <style lang="scss">
-.HeaderMobileMenu {
+.HeaderMenuMobile {
   position: fixed;
   left: 0;
   top: 0;
