@@ -23,6 +23,11 @@ export default {
       isMobileMenuOpen: false,
     }
   },
+  watch: {
+    '$route.fullPath'() {
+      this.isMobileMenuOpen = false
+    },
+  },
 }
 </script>
 
