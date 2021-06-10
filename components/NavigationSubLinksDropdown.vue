@@ -3,9 +3,9 @@
     :overlay="false"
     mode="hover"
     direction="center"
-    class="NavigationSubLinks"
-    @mouseenter.native="isOpen = true"
-    @mouseleave.native="isOpen = false"
+    class="NavigationSubLinksDropDown"
+    @mouseenter.native="openDropdown"
+    @mouseleave.native="closeDropdown"
   >
     <RotatingChevron slot="trigger" :size="12" :active="isOpen" />
     <GradientBorder slot="body">
@@ -18,8 +18,10 @@
           custom
         >
           <li
-            class="NavigationSubLinks__link"
-            :class="{ 'NavigationSubLinks__link--active': isExactActive }"
+            class="NavigationSubLinksDropDown__link"
+            :class="{
+              'NavigationSubLinksDropDown__link--active': isExactActive,
+            }"
           >
             <a :href="href" @click="navigate">
               {{ $t(link.label) }}
@@ -36,8 +38,7 @@ export default {
   props: {
     links: {
       type: Array,
-      // eslint-disable-next-line vue/require-valid-default-prop
-      default: [],
+      default: () => [],
     },
   },
   data() {
@@ -45,11 +46,22 @@ export default {
       isOpen: false,
     }
   },
+  methods: {
+    openDropdown() {
+      this.isOpen = true
+    },
+    closeDropdown() {
+      this.isOpen = false
+    },
+    toggleDropdown() {
+      this.isOpen = !this.isOpen
+    },
+  },
 }
 </script>
 
 <style lang="scss">
-.NavigationSubLinks {
+.NavigationSubLinksDropDown {
   &__link {
     padding: 4px 8px 4px 12px;
 
