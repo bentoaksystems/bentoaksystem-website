@@ -12,20 +12,20 @@ export default {}
 
 <style lang="scss">
 .DefaultLayout {
-  --headerHeight: 56px;
-
   &__header {
     position: relative;
     z-index: 1;
   }
 
   &__body {
+    --headerHeight: 56px;
+
+    @include respondTo(md) {
+      --headerHeight: 112px;
+    }
+
     margin-top: calc(var(--headerHeight) * -1);
     padding-top: var(--headerHeight);
-  }
-
-  @include respondTo(md) {
-    --headerHeight: 112px;
   }
 }
 </style>
