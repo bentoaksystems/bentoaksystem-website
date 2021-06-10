@@ -1,6 +1,6 @@
 <template>
   <nav class="Navigation">
-    <ul class="Navigation__list">
+    <ul class="Navigation__list" :class="`Navigation__list--${variant}`">
       <NuxtLink
         v-for="link in navLinks"
         :key="link.label"
@@ -11,14 +11,15 @@
         <li
           :class="[
             'Navigation__item',
+            `Navigation__item--${variant}`,
             { 'Navigation__item--active': isExactActive },
-            { 'Navigation__item--footer': variant === 'footer' },
           ]"
         >
           <a :href="href" @click="navigate">
             {{ $t(link.label) }}
           </a>
-          <NavigationSubLinks
+          <component
+            :is="subLinksType"
             v-if="link.children"
             :links="link.children"
             class="Navigation__subLinks"
@@ -36,7 +37,7 @@ export default {
       type: String,
       default: 'default',
       validator(value) {
-        return ['default', 'footer'].includes(value)
+        return ['default', 'headerMenuMobile', 'footer'].includes(value)
       },
     },
   },
@@ -55,6 +56,11 @@ export default {
         this.makeNavLink('navLinks.faq', '/faq'),
       ]
     },
+    subLinksType() {
+      return this.variant === 'headerMenuMobile'
+        ? 'NavigationSubLinksToggleable'
+        : 'NavigationSubLinksDropdown'
+    },
   },
   methods: {
     makeNavLink(label, to, children = null) {
@@ -70,10 +76,18 @@ export default {
 
 <style lang="scss">
 .Navigation {
+  display: flex;
+
   &__list {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    &--headerMenuMobile {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__item {
@@ -87,11 +101,20 @@ export default {
       text-decoration: underline;
     }
 
-    &--header {
+    &--default {
+      color: $blue;
+    }
+
+    &--headerMenuMobile {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-bottom: auto;
       color: $white;
     }
 
     &--footer {
+      margin-bottom: 32px;
       color: $dark-grey;
     }
   }
