@@ -46,9 +46,12 @@ export default {
   }
 
   &__gradientBorder {
-    margin: 0;
-    border-radius: 0;
     height: 100%;
+
+    @include addSpecificity {
+      margin: 0;
+      border-radius: 0;
+    }
   }
 
   &__mainContainer {
