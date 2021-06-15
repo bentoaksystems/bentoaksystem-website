@@ -1,3 +1,5 @@
+import home from './home'
+
 export default {
   navLinks: {
     home: 'Home',
@@ -10,4 +12,6 @@ export default {
     managedteam: 'Managed team',
     planning: 'Product planning',
   },
+  readmore: 'Read more',
+  home,
 }

@@ -1,3 +1,16 @@
+// make sure not to sure it with nested selectors
+@mixin addSpecificity {
+  &#{&} {
+    @content;
+  }
+}
+
+@mixin gradientText($gradient) {
+  background: $gradient;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @mixin fontSize($value) {
   font-size: $value;
   font-size: px-to-rem($value);
