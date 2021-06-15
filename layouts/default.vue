@@ -11,6 +11,10 @@ export default {}
 </script>
 
 <style lang="scss">
+:root {
+  --headerHeight: 56px;
+}
+
 .DefaultLayout {
   &__header {
     position: relative;
@@ -18,8 +22,6 @@ export default {}
   }
 
   &__body {
-    --headerHeight: 56px;
-
     @include respondTo(md) {
       --headerHeight: 112px;
     }
