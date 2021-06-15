@@ -25,7 +25,20 @@ export default {
 
 <style lang="scss">
 .HomeHero {
+  padding-top: var(--headerHeight);
   padding-bottom: 32px;
+
+  @include addSpecificity {
+    margin: 0 -2px;
+    border-radius: 0;
+    background-image: url('~/assets/images/home/bgHomepage.png');
+    background-size: cover;
+
+    @include respondTo(md) {
+      margin: 0;
+      border-radius: 32px;
+    }
+  }
 
   @include respondTo(md) {
     padding-bottom: 160px;
