@@ -1,23 +1,40 @@
 <template>
-  <component
-    :is="tag"
-    :class="`GradientBorder--${modifier}`"
-    class="GradientBorder"
-  >
+  <component :is="tag" :class="modifierClasses" class="GradientBorder">
     <slot />
   </component>
 </template>
 
 <script>
 export default {
+  name: 'GradientBorder',
   props: {
     tag: {
       type: String,
       default: 'div',
     },
     modifier: {
-      type: String,
+      type: [Array, String],
       default: 'default',
+      validator(value) {
+        const whiteList = ['default', 'nested']
+
+        if (Array.isArray(value)) {
+          return value.every((valueItem) => whiteList.includes(valueItem))
+        } else {
+          return whiteList.includes(value)
+        }
+      },
+    },
+  },
+  computed: {
+    modifierClasses() {
+      const { modifier } = this
+
+      if (Array.isArray(modifier)) {
+        return modifier.map((modifierItem) => `GradientBorder--${modifierItem}`)
+      } else {
+        return `GradientBorder--${modifier}`
+      }
     },
   },
 }
@@ -28,6 +45,7 @@ export default {
   position: relative;
   background: #fff;
   background-clip: padding-box;
+  border: solid transparent;
 
   &::before {
     content: '';
@@ -37,19 +55,45 @@ export default {
     bottom: 0;
     left: 0;
     border-radius: inherit;
-    z-index: -1;
+    z-index: -2;
   }
 
   &--default {
     $boderWidth: 2px;
 
     margin: $boderWidth;
-    border: $boderWidth solid transparent;
+    border-width: $boderWidth;
     border-radius: 4px;
 
     &::before {
       margin: -$boderWidth;
       background: $gradient5;
+    }
+  }
+
+  &--nested {
+    $boderWidth: 2px;
+
+    margin: $boderWidth;
+    border: $boderWidth;
+    border-radius: 4px;
+    @include stackingContext;
+
+    &::before {
+      margin: -$boderWidth;
+      background: $gradient5;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: inherit;
+      border-radius: inherit;
+      z-index: -1;
     }
   }
 }

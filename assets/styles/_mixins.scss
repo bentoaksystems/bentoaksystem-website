@@ -21,6 +21,10 @@
   height: $side;
 }
 
+@mixin stackingContext {
+  opacity: 0.99;
+}
+
 @mixin respondTo($name) {
   @if (map-has-key($breakpoints, $name)) {
     @media (min-width: #{inspect(map-get($breakpoints, $name))}) {
