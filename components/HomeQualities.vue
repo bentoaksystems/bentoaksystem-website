@@ -4,7 +4,6 @@
       <HomeQualityItem
         v-for="quality in qualities"
         :key="quality.name"
-        class="HomeQualities__item"
         v-bind="quality"
       />
     </div>
@@ -64,15 +63,20 @@ export default {
 
   &__container {
     display: flex;
-    justify-content: center;
+    gap: 40px;
+    margin-left: -($sidePadding);
+    margin-right: -($sidePadding);
+    padding-left: $sidePadding;
+    width: calc(100% + (2 * #{$sidePadding}));
     overflow-y: auto;
-  }
 
-  &__item {
-    margin: 16px;
+    & > * {
+      flex-basis: 100%;
+      flex: 1;
+    }
 
-    @include respondTo(md) {
-      margin: unset;
+    & > *:last-child {
+      margin-right: $sidePadding;
     }
   }
 }
