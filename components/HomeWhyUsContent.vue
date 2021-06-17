@@ -2,13 +2,13 @@
   <Container>
     <div class="HomeWhyUsContent__box">
       <h3 class="HomeWhyUsContent__title">{{ $t('home.whyUs.title') }}</h3>
-      <div class="HomeWhyUsContent__listContainer">
+      <HorizontalScrollable class="HomeWhyUsContent__listContainer">
         <HomeWhyUsItem
           v-for="reason in reasons"
           :key="reason.title"
           v-bind="reason"
         />
-      </div>
+      </HorizontalScrollable>
     </div>
   </Container>
 </template>
@@ -66,22 +66,7 @@ export default {
   }
 
   &__listContainer {
-    display: flex;
     gap: 32px;
-    margin-left: -($sidePadding);
-    margin-right: -($sidePadding);
-    padding-left: $sidePadding;
-    width: calc(100% + (2 * #{$sidePadding}));
-    overflow-y: auto;
-
-    & > * {
-      flex-basis: 100%;
-      flex: 1;
-    }
-
-    & > *:last-child {
-      margin-right: $sidePadding;
-    }
   }
 
   @include respondTo(md) {

@@ -1,12 +1,12 @@
 <template>
   <Container class="HomeQualities">
-    <div class="HomeQualities__container">
+    <HorizontalScrollable class="HomeQualities__container">
       <HomeQualityItem
         v-for="quality in qualities"
         :key="quality.name"
         v-bind="quality"
       />
-    </div>
+    </HorizontalScrollable>
   </Container>
 </template>
 
@@ -62,22 +62,7 @@ export default {
   }
 
   &__container {
-    display: flex;
     gap: 40px;
-    margin-left: -($sidePadding);
-    margin-right: -($sidePadding);
-    padding-left: $sidePadding;
-    width: calc(100% + (2 * #{$sidePadding}));
-    overflow-y: auto;
-
-    & > * {
-      flex-basis: 100%;
-      flex: 1;
-    }
-
-    & > *:last-child {
-      margin-right: $sidePadding;
-    }
   }
 }
 </style>
