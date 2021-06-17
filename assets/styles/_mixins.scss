@@ -21,6 +21,12 @@
   height: $side;
 }
 
+@mixin xyFlexCentered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @mixin stackingContext {
   opacity: 0.99;
 }
