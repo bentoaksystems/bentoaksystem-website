@@ -16,7 +16,7 @@ export default {
       type: [Array, String],
       default: 'default',
       validator(value) {
-        const whiteList = ['default', 'nested']
+        const whiteList = ['default', 'form', 'nested']
 
         if (Array.isArray(value)) {
           return value.every((valueItem) => whiteList.includes(valueItem))
@@ -71,18 +71,22 @@ export default {
     }
   }
 
-  &--nested {
-    $boderWidth: 2px;
+  &--form {
+    $boderWidth: 1px;
 
     margin: $boderWidth;
-    border: $boderWidth;
+    border-width: $boderWidth;
     border-radius: 4px;
-    @include stackingContext;
 
     &::before {
       margin: -$boderWidth;
-      background: $gradient5;
+      background: $gradientForm;
     }
+  }
+
+  &--nested {
+    border-radius: 4px;
+    @include stackingContext;
 
     &::after {
       content: '';
