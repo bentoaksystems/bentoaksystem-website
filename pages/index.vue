@@ -5,6 +5,7 @@
     <HomeHowWeHelp />
     <HomeYourNeeds />
     <HomeWhyUs />
+    <HomeLetsGetInTouch />
   </div>
 </template>
 
