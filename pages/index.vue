@@ -3,6 +3,7 @@
     <HomeHero />
     <HomeQualities />
     <HomeHowWeHelp />
+    <HomeYourNeeds />
     <HomeWhyUs />
   </div>
 </template>
