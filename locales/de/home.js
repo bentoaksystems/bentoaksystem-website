@@ -9,6 +9,11 @@ export default {
     package: 'Affordable Packages',
     ukContract: 'UK contract',
   },
+  howWeHelp: {
+    title: 'How can we help?',
+    text: 'Bent Oak Systems can help you to find remote talents, furthermore, it can grow your team by organizing and managing them. So, if you like to free up your time to focus more on marketing and attracting investment for your product, we can help in analyzing, planning, and implementing your product for you.',
+    howWeStarted: 'How we started',
+  },
   whyUs: {
     title: 'Why choose us?',
     valueTitle: 'Value for money,',

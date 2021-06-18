@@ -2,6 +2,7 @@
   <div class="HomePage">
     <HomeHero />
     <HomeQualities />
+    <HomeHowWeHelp />
     <HomeWhyUs />
   </div>
 </template>
