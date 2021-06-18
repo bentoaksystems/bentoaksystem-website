@@ -1,5 +1,5 @@
 <template>
-  <div class="Footer">
+  <footer class="Footer">
     <Container class="Footer__container">
       <Logo class="Footer__logo" />
       <Navigation variant="footer" />
@@ -30,7 +30,7 @@
         </div>
       </div>
     </Container>
-  </div>
+  </footer>
 </template>
 
 <script>

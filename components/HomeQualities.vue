@@ -1,5 +1,5 @@
 <template>
-  <Container class="HomeQualities">
+  <Container tag="section" class="HomeQualities">
     <HorizontalScrollable class="HomeQualities__container">
       <HomeQualityItem
         v-for="quality in qualities"

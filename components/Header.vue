@@ -1,5 +1,5 @@
 <template>
-  <Container class="Header">
+  <Container tag="header" class="Header">
     <Logo class="Header__logo" has-text />
     <template v-if="!$screen.md">
       <Icon name="menu" @click.native="isMobileMenuOpen = true" />

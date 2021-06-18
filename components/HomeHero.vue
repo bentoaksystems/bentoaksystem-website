@@ -1,5 +1,5 @@
 <template>
-  <GradientBorder class="HomeHero">
+  <GradientBorder tag="section" class="HomeHero">
     <Container class="HomeHero__container">
       <h1 class="HomeHero__title">{{ $t('home.headline') }}</h1>
       <div class="HomeHero__content">

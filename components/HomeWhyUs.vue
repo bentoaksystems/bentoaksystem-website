@@ -1,8 +1,10 @@
 <template>
-  <GradientBorder v-if="$screen.md" class="HomeWhyUs HomeWhyUs--bordered">
-    <HomeWhyUsContent />
-  </GradientBorder>
-  <HomeWhyUsContent v-else class="HomeWhyUs" />
+  <section class="HomeWhyUs">
+    <GradientBorder v-if="$screen.md" class="HomeWhyUs__gradientBorder">
+      <HomeWhyUsContent />
+    </GradientBorder>
+    <HomeWhyUsContent v-else />
+  </section>
 </template>
 
 <script>
@@ -13,7 +15,7 @@ export default {
 
 <style lang="scss">
 .HomeWhyUs {
-  &--bordered {
+  &__gradientBorder {
     @include addSpecificity {
       margin: 0;
       border-radius: 8px;
