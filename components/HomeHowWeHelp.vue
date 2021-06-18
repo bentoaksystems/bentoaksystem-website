@@ -29,7 +29,7 @@ export default {
 
   @include respondTo(md) {
     padding-top: 32px;
-    padding-bottom: 32px;
+    padding-bottom: 128px;
   }
 
   &__title {
