@@ -1,8 +1,20 @@
 <template>
-  <div class="Container">
+  <component :is="tag" class="Container">
     <slot />
-  </div>
+  </component>
 </template>
+
+<script>
+export default {
+  name: 'Container',
+  props: {
+    tag: {
+      type: String,
+      default: 'div',
+    },
+  },
+}
+</script>
 
 <style lang="scss">
 .Container {
