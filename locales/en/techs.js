@@ -21,4 +21,9 @@ export default {
     item5:
       'An amazing number of open-source, ready packages for complex tasks, like encryption, authentication, live client updates, etc.',
   },
+  cta: {
+    textLine1: 'Outsourcing at its finest',
+    textLine2: 'Starting from £7.99 per hour',
+    button: 'Get an estimate',
+  },
 }

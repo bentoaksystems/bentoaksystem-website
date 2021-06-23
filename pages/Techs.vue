@@ -2,6 +2,7 @@
   <main>
     <TechsHero />
     <TechsWebTechs />
+    <TechsCta />
   </main>
 </template>
 
