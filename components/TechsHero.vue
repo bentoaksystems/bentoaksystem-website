@@ -1,13 +1,13 @@
 <template>
-  <Container tag="section" class="TechHero">
-    <h1 class="TechHero__headline">
+  <Container tag="section" class="TechsHero">
+    <h1 class="TechsHero__headline">
       {{ $t('techs.headline') }}
     </h1>
-    <p class="TechHero__subhead">
-      <span class="TechHero__subheadContent">
+    <p class="TechsHero__subhead">
+      <span class="TechsHero__subheadContent">
         {{ $t('techs.subhead') }}
       </span>
-      <NuxtLink to="/services" class="TechHero__ourServices">
+      <NuxtLink to="/services" class="TechsHero__ourServices">
         {{ $t('techs.ourServices') }}
       </NuxtLink>
     </p>
@@ -16,12 +16,12 @@
 
 <script>
 export default {
-  name: 'TechHero',
+  name: 'TechsHero',
 }
 </script>
 
 <style lang="scss">
-.TechHero {
+.TechsHero {
   margin-bottom: 60px;
 
   @include respondTo(md) {

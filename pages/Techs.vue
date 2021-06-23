@@ -1,6 +1,6 @@
 <template>
   <main>
-    <TechHero />
+    <TechsHero />
   </main>
 </template>
 
