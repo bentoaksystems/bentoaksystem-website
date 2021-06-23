@@ -1,9 +1,13 @@
 <template>
-  <div>Techs</div>
+  <main>
+    <TechHero />
+  </main>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Techs',
+}
 </script>
 
 <style></style>
