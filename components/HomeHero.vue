@@ -1,7 +1,7 @@
 <template>
   <GradientBorder tag="section" class="HomeHero">
     <Container class="HomeHero__container">
-      <h1 class="HomeHero__title">{{ $t('home.headline') }}</h1>
+      <h1 class="HomeHero__headline">{{ $t('home.headline') }}</h1>
       <div class="HomeHero__content">
         <div class="HomeHero__subheadContainer">
           <h3 class="HomeHero__subhead">{{ $t('home.subhead') }}</h3>
@@ -50,7 +50,7 @@ export default {
     }
   }
 
-  &__title {
+  &__headline {
     font-weight: 700;
     line-height: 51px;
     @include fontSize(34px);
