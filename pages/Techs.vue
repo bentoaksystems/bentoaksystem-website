@@ -1,6 +1,7 @@
 <template>
   <main>
     <TechsHero />
+    <TechsWebTechs />
   </main>
 </template>
 
