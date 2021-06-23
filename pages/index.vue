@@ -1,12 +1,12 @@
 <template>
-  <div class="HomePage">
+  <main class="HomePage">
     <HomeHero />
     <HomeQualities />
     <HomeHowWeHelp />
     <HomeYourNeeds />
     <HomeWhyUs />
     <HomeLetsGetInTouch />
-  </div>
+  </main>
 </template>
 
 <script>
