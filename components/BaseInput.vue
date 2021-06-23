@@ -1,9 +1,6 @@
 <template>
   <div class="BaseInput">
-    <GradientBorder
-      class="BaseInput__inputContainer"
-      :modifier="['form', 'nested']"
-    >
+    <GradientBorder class="BaseInput__inputContainer" nested>
       <textarea
         v-if="isTextarea"
         :id="id"
@@ -80,6 +77,17 @@ export default {
 .BaseInput {
   position: relative;
   padding: 12px 0 0;
+
+  &__inputContainer {
+    @include addSpecificity {
+      border-width: 1px;
+    }
+
+    &::before {
+      margin: -1px;
+      background: $gradientForm;
+    }
+  }
 
   &__label {
     @include fontSize(16px);

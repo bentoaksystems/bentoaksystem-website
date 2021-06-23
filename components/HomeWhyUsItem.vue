@@ -1,5 +1,5 @@
 <template>
-  <GradientBorder :modifier="['nested', 'default']">
+  <GradientBorder nested>
     <div class="HomeWhyUsItem">
       <div class="HomeWhyUsItem__imgContainer">
         <img class="HomeWhyUsItem__img" :src="imgUrl" :alt="$t(title)" />
