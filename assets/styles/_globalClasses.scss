@@ -1,0 +1,16 @@
+.verticalList {
+  display: flex;
+  flex-direction: column;
+
+  &--centred-align {
+    align-items: center;
+  }
+}
+
+.horizontalList {
+  display: flex;
+
+  &--centred-align {
+    align-items: center;
+  }
+}
