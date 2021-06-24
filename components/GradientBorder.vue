@@ -3,7 +3,6 @@
     :is="tag"
     :class="{ 'GradientBorder--nested': nested }"
     class="GradientBorder"
-    :style="cssVariables"
   >
     <slot />
   </component>
