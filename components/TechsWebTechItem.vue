@@ -4,11 +4,7 @@
     <h5 class="TechsWebTechItem__title">
       {{ $t(title) }}
     </h5>
-    <ul class="TechsWebTechItem__list">
-      <li v-for="item in items" :key="item" class="TechsWebTechItem__listItem">
-        {{ $t(item) }}
-      </li>
-    </ul>
+    <SimpleUnorderedList :items="items" />
   </GradientBorder>
 </template>
 
@@ -57,20 +53,6 @@ export default {
     font-weight: 700;
     @include fontSize(20px);
     @include gradientText($gradient1);
-  }
-
-  &__list {
-    max-width: 100%;
-    @include addSpecificity {
-      padding-left: 32px;
-    }
-  }
-
-  &__listItem {
-    font-weight: 500;
-    line-height: 24px;
-    list-style: disc;
-    @include fontSize(16px);
   }
 }
 </style>
