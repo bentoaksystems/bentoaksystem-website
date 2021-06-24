@@ -4,6 +4,7 @@
       v-for="webTech in webTechs"
       :key="webTech.title"
       v-bind="webTech"
+      class="TechsWebTechs__item"
     />
   </Container>
 </template>
@@ -56,6 +57,23 @@ export default {
   @include respondTo(md) {
     flex-direction: row;
     gap: 72px;
+  }
+
+  &__item {
+    @include addSpecificity {
+      border-radius: 8px;
+
+      &::before {
+        margin: -1px;
+      }
+      @include respondTo(md) {
+        border-radius: 16px;
+
+        &::before {
+          margin: -3px;
+        }
+      }
+    }
   }
 }
 </style>
