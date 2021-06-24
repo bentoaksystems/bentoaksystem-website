@@ -3,6 +3,7 @@
     <TechsHero />
     <TechsWebTechs />
     <TechsCta />
+    <TechsBenefits />
   </main>
 </template>
 

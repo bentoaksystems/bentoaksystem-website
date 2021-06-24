@@ -26,4 +26,34 @@ export default {
     textLine2: 'Starting from £7.99 per hour',
     button: 'Get an estimate',
   },
+  dataEngineering: {
+    title: 'Data engineering',
+    item1: 'The technology of choice for many data engineers',
+    item2:
+      'Effective use of cloud computing and distilled experience and knowledge to handle a large amount of data and extract knowledge and insight',
+  },
+  productDesign: {
+    title: 'Product design (UX/UI)',
+    list1: {
+      item1:
+        'Successful products are not only visually appealing to your audience, but are also highly tailored to users’ needs.',
+      item2:
+        'Our team helps companies compete in today’s digital economy with full-cycle product development services that take you from ideation through post-launch optimization.',
+      item3: 'Bring UX and UI designers on board to make your product shine. ',
+    },
+    list2: {
+      item1: 'User research',
+      item2: 'Prototyping',
+      item3: 'Wireframing',
+      item4: 'Design Thinking',
+      item5: 'Information architecture',
+    },
+    list3: {
+      item1: 'User Surveys',
+      item2: 'Remote Usability testing',
+      item3: 'Online User interview',
+      item4: 'Online A/B testing',
+      item5: 'Scenario map',
+    },
+  },
 }
