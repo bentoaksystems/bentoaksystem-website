@@ -1,5 +1,6 @@
 import home from './home'
 import techs from './techs'
+import faqs from './faqs'
 
 export default {
   navLinks: {
@@ -16,4 +17,5 @@ export default {
   readmore: 'Read more',
   home,
   techs,
+  faqs,
 }

@@ -1,5 +1,7 @@
 <template>
-  <main>FAQs</main>
+  <main>
+    <FAQsHero />
+  </main>
 </template>
 
 <script>
