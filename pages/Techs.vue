@@ -1,9 +1,9 @@
 <template>
-  <main>
+  <main class="Techs">
     <TechsHero />
-    <TechsWebTechs />
-    <TechsCta />
-    <TechsBenefits />
+    <TechsWebTechs class="Techs__section Techs__section--webTechs" />
+    <TechsCta class="Techs__section Techs__section--cta" />
+    <TechsBenefits class="Techs__section Techs__section--benefits" />
   </main>
 </template>
 
@@ -13,4 +13,32 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+.Techs {
+  &__section {
+    &--webTechs {
+      margin-bottom: 16px;
+
+      @include respondTo(md) {
+        margin-bottom: 76px;
+      }
+    }
+
+    &--cta {
+      margin-bottom: 46px;
+
+      @include respondTo(md) {
+        margin-bottom: 54px;
+      }
+    }
+
+    &--benefits {
+      margin-bottom: 64px;
+
+      @include respondTo(md) {
+        margin-bottom: 160px;
+      }
+    }
+  }
+}
+</style>
