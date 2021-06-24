@@ -1,9 +1,11 @@
 <template>
-  <div>FAQ</div>
+  <main>FAQs</main>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'FAQs',
+}
 </script>
 
 <style></style>

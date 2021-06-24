@@ -53,7 +53,7 @@ export default {
         ]),
         this.makeNavLink('navLinks.techs', '/techs'),
         this.makeNavLink('navLinks.careers', '/careers'),
-        this.makeNavLink('navLinks.faq', '/faq'),
+        this.makeNavLink('navLinks.faq', '/faqs'),
       ]
     },
     subLinksType() {
