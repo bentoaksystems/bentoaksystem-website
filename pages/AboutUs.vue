@@ -2,6 +2,7 @@
   <main class="AboutUs">
     <AboutUsHero />
     <AboutUsWhyUs />
+    <AboutUsOurMission />
   </main>
 </template>
 
