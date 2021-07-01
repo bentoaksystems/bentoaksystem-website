@@ -1,4 +1,5 @@
 import home from './home'
+import aboutUs from './aboutUs'
 import techs from './techs'
 import faqs from './faqs'
 
@@ -16,6 +17,7 @@ export default {
   },
   readmore: 'Read more',
   home,
+  aboutUs,
   techs,
   faqs,
 }
