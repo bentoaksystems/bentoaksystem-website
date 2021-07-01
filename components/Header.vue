@@ -1,18 +1,19 @@
 <template>
   <Container tag="header" class="Header">
     <Logo class="Header__logo" has-text />
-    <template v-if="!$screen.md">
-      <Icon name="menu" @click.native="isMobileMenuOpen = true" />
-      <HeaderMenuMobile
-        :is-open="isMobileMenuOpen"
-        @close="isMobileMenuOpen = false"
-      />
-    </template>
-    <template v-else>
-      <Navigation />
-      <SwitchLocale class="Header__switchLocale" />
-      <BaseButton class="Header__CTA">Call us</BaseButton>
-    </template>
+    <Icon
+      v-show="!$screen.md"
+      name="menu"
+      @click.native="isMobileMenuOpen = true"
+    />
+    <HeaderMenuMobile
+      v-show="!$screen.md"
+      :is-open="isMobileMenuOpen"
+      @close="isMobileMenuOpen = false"
+    />
+    <Navigation v-show="$screen.md" />
+    <SwitchLocale v-show="$screen.md" class="Header__switchLocale" />
+    <BaseButton v-show="$screen.md" class="Header__CTA">Call us</BaseButton>
   </Container>
 </template>
 

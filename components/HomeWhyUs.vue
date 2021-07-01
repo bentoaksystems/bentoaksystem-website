@@ -1,9 +1,9 @@
 <template>
   <section class="HomeWhyUs">
-    <GradientBorder v-if="$screen.md" class="HomeWhyUs__gradientBorder">
+    <GradientBorder v-show="!$screen.md" class="HomeWhyUs__gradientBorder">
       <HomeWhyUsContent />
     </GradientBorder>
-    <HomeWhyUsContent v-else />
+    <HomeWhyUsContent v-show="$screen.md" />
   </section>
 </template>
 
