@@ -3,14 +3,20 @@
     <GradientBorder
       class="TechsBenefits__box TechsBenefits__box--dataEngineering"
     >
+      <img
+        v-show="!isDesktop"
+        :src="require('~/assets/images/techs/techsAws.png')"
+        alt="Aws"
+        class="TechsBenefits__img"
+      />
+      <h4 v-show="!isDesktop" class="TechsBenefits__title">
+        {{ $t('techs.dataEngineering.title') }}
+      </h4>
       <VerticalImageList
         v-show="isDesktop"
         :images="dataEngineeringImages"
         class="TechsBenefits__imgList TechsBenefits__imgList--dataEngineering"
       />
-      <h4 v-show="!isDesktop" class="TechsBenefits__title">
-        {{ $t('techs.dataEngineering.title') }}
-      </h4>
       <SimpleUnorderedList
         :items="dataEngineeringContent"
         class="TechsBenefits__list"
@@ -101,8 +107,8 @@ export default {
           require('~/assets/images/techs/techsInvision.png')
         ),
         this.makeImgObj(
-          'Unknown',
-          require('~/assets/images/techs/techsUnknown.png')
+          'protoPie',
+          require('~/assets/images/techs/techsProtoPie.png')
         ),
         this.makeImgObj(
           'Hotjar',
