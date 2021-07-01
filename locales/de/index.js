@@ -1,6 +1,7 @@
 import home from './home'
 import aboutUs from './aboutUs'
 import techs from './techs'
+import careers from './careers'
 import faqs from './faqs'
 
 export default {
@@ -19,5 +20,6 @@ export default {
   home,
   aboutUs,
   techs,
+  careers,
   faqs,
 }
