@@ -13,8 +13,10 @@ import german from '~/assets/images/icons/german'
 import instagram from '~/assets/images/icons/instagram'
 import linkedin from '~/assets/images/icons/linkedin'
 import menu from '~/assets/images/icons/menu'
+import minus from '~/assets/images/icons/minus'
 import phone from '~/assets/images/icons/phone'
 import pin from '~/assets/images/icons/pin'
+import plus from '~/assets/images/icons/plus'
 import spanish from '~/assets/images/icons/spanish'
 import twitter from '~/assets/images/icons/twitter'
 
@@ -29,8 +31,10 @@ const iconsMap = {
   instagram,
   linkedin,
   menu,
+  minus,
   phone,
   pin,
+  plus,
   spanish,
   twitter,
 }
