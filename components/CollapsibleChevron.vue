@@ -6,7 +6,7 @@
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
-    <g :filter="isOpen || 'url(#filter0_d)'">
+    <g :filter="shadow && 'url(#filter0_d)'">
       <path
         d="M10 12.0001L26.25 25.5001L38 35.5002L67 12.0001"
         stroke="#FEBF3D"
@@ -55,7 +55,7 @@
 export default {
   name: 'CollapsibleChevron',
   props: {
-    isOpen: {
+    shadow: {
       type: Boolean,
       require: true,
     },

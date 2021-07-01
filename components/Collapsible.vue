@@ -13,7 +13,7 @@
         class="Collapsible__chevron"
         :class="{ 'Collapsible__chevron--active': isOpen }"
       >
-        <CollapsibleChevron :is-open="isOpen" />
+        <CollapsibleChevron :shadow="!isOpen" />
       </div>
     </div>
     <div v-if="isOpen">
