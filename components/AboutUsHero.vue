@@ -20,8 +20,6 @@ export default {
 
 <style lang="scss">
 .AboutUsHero {
-  padding-bottom: 32px;
-
   &::after {
     content: '';
     display: block;
