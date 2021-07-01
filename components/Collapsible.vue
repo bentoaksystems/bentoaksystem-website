@@ -3,9 +3,9 @@
     <div
       class="Collapsible__label"
       tabindex="0"
-      @click="switchCollapsible"
-      @keypress.enter="switchCollapsible"
-      @keypress.space="switchCollapsible"
+      @click="toggleCollapsible"
+      @keypress.enter="toggleCollapsible"
+      @keypress.space="toggleCollapsible"
     >
       <slot v-if="hasTitleSlot" name="title" />
       <h5 v-else class="Collapsible__title">{{ $t(title) }}</h5>
@@ -46,7 +46,7 @@ export default {
     },
   },
   methods: {
-    switchCollapsible() {
+    toggleCollapsible() {
       this.isOpen = !this.isOpen
     },
   },
@@ -68,8 +68,14 @@ export default {
     justify-content: center;
     align-items: center;
 
+    svg {
+      transition: transform 400ms ease-in-out;
+    }
+
     &--active {
-      transform: rotate(180deg);
+      svg {
+        transform: rotate(180deg);
+      }
     }
   }
 }
