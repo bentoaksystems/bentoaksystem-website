@@ -1,6 +1,7 @@
 <template>
   <main class="AboutUs">
     <AboutUsHero />
+    <AboutUsWhyUs />
   </main>
 </template>
 
