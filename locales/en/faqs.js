@@ -1,4 +1,26 @@
 export default {
   headline: 'Have a question?',
   subhead: 'See below for our answers',
+  tabs: {
+    clients: 'For Clients',
+    devs: 'For Developers',
+    work: 'Work Frame',
+    payment: 'Payment',
+  },
+  qas: {
+    q1: 'How long do you need to send shortlisted candidates?',
+    a1: 'Ideally, our initial screening and filtration process takes up to 10 days - 2 weeks. You should expect to receive the shortlisted candidates within this period.',
+    q2: 'How does your screening process ensure top and qualified developers?',
+    a2: 'Ideally, our initial screening and filtration process takes up to 10 days - 2 weeks. You should expect to receive the shortlisted candidates within this period.',
+    q3: 'Do i need to be tech-savvy to cooperate with you on a software or application?',
+    a3: 'Ideally, our initial screening and filtration process takes up to 10 days - 2 weeks. You should expect to receive the shortlisted candidates within this period.',
+    q4: 'Do you offer any discount?',
+    a4: 'Ideally, our initial screening and filtration process takes up to 10 days - 2 weeks. You should expect to receive the shortlisted candidates within this period.',
+    q5: 'How can I protect my data in line of GDPR?',
+    a5: 'Ideally, our initial screening and filtration process takes up to 10 days - 2 weeks. You should expect to receive the shortlisted candidates within this period.',
+    q6: 'How do you find the talented developers?',
+    a6: 'Ideally, our initial screening and filtration process takes up to 10 days - 2 weeks. You should expect to receive the shortlisted candidates within this period.',
+    q7: 'How much is the cost of hiring developers and creating a team?',
+    a7: 'Ideally, our initial screening and filtration process takes up to 10 days - 2 weeks. You should expect to receive the shortlisted candidates within this period.',
+  },
 }
