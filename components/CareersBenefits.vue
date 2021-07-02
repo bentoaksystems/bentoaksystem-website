@@ -72,13 +72,13 @@ export default {
     row-gap: 16px;
     padding-top: $verticalPadding;
     padding-bottom: $verticalPadding;
+  }
 
-    &__item {
-      display: flex;
+  &__item {
+    display: flex;
 
-      & > * {
-        flex: 1;
-      }
+    & > * {
+      flex: 1;
     }
   }
 
@@ -89,15 +89,15 @@ export default {
       row-gap: 80px;
       padding-top: $verticalPadding;
       padding-bottom: $verticalPadding;
+    }
 
-      &__item {
-        & > * {
-          flex: 0 65%;
-        }
+    &__item {
+      & > * {
+        flex: 0 65%;
+      }
 
-        &--reversed {
-          justify-content: flex-end;
-        }
+      &--reversed {
+        justify-content: flex-end;
       }
     }
   }
