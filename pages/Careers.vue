@@ -1,6 +1,7 @@
 <template>
   <main class="Careers">
     <CareersHero />
+    <CareersBenefits />
   </main>
 </template>
 
