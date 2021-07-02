@@ -1,6 +1,7 @@
 <template>
   <main class="Services">
     <ServicesHero />
+    <ServicesPoints />
   </main>
 </template>
 
