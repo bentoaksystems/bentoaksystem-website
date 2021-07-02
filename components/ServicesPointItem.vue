@@ -8,7 +8,7 @@
       <div v-show="isDesktop" class="ServicesPointItem__imgContainer">
         <img :src="imgUrl" :alt="name" class="ServicesPointItem__img" />
       </div>
-      <BaseButton class="ServicesPointItem__button">{{
+      <BaseButton :to="localePath(url)" class="ServicesPointItem__button">{{
         $t(btnLabel)
       }}</BaseButton>
     </div>

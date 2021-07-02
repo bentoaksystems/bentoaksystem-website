@@ -17,25 +17,25 @@ export default {
     points() {
       return [
         this.makePointObj(
-          'how',
+          'teamextension',
           'services.points.text1',
           'services.points.label1',
-          '/',
+          '/services/teamextension',
           require('~/assets/images/services/how.svg'),
           this.$t('services.points.focus1', { price: '£7.99' })
         ),
         this.makePointObj(
-          'team',
+          'managedteam',
           'services.points.text2',
           'services.points.label2',
-          '/',
+          '/services/managedteam',
           require('~/assets/images/services/team.svg')
         ),
         this.makePointObj(
-          'execution',
+          'planning',
           'services.points.text3',
           'services.points.label3',
-          '/',
+          '/services/planning',
           require('~/assets/images/services/execution.svg')
         ),
       ]
