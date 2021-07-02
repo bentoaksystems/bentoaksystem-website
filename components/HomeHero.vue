@@ -5,7 +5,7 @@
       <div class="HomeHero__content">
         <div class="HomeHero__subheadContainer">
           <h3 class="HomeHero__subhead">{{ $t('home.subhead') }}</h3>
-          <NuxtLink :to="'/'" class="HomeHero__readmore">
+          <NuxtLink :to="localePath('/')" class="HomeHero__readmore">
             {{ $t('readmore') }}
           </NuxtLink>
         </div>

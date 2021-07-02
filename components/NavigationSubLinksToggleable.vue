@@ -6,7 +6,7 @@
         v-for="link in links"
         :key="link.label"
         v-slot="{ href, navigate, isExactActive }"
-        :to="link.to"
+        :to="localePath(link.to)"
         custom
       >
         <li

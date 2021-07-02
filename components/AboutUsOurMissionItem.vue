@@ -8,7 +8,7 @@
         {{ $t(text) }}
         <NuxtLink
           v-show="isDesktop"
-          :to="url"
+          :to="localePath(url)"
           class="AboutUsOurMissionItem__link"
         >
           {{ $t(urlLabel) }}

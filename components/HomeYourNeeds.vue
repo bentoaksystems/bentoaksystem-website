@@ -13,7 +13,7 @@
           class="HomeYourNeeds__item"
         />
       </div>
-      <BaseButton class="HomeYourNeeds__CTA" :to="'#callus'">
+      <BaseButton class="HomeYourNeeds__CTA" :to="localePath('#callus')">
         {{ $t('home.yourNeeds.content.cta') }}
       </BaseButton>
     </div>
