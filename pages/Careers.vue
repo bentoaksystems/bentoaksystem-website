@@ -2,6 +2,7 @@
   <main class="Careers">
     <CareersHero />
     <CareersBenefits />
+    <CareersOpportunities />
   </main>
 </template>
 
