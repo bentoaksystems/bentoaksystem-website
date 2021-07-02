@@ -1,6 +1,7 @@
 <template>
   <main>
     <TeamExtensionHero />
+    <TeamExtensionFlex />
   </main>
 </template>
 
