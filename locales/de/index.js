@@ -1,5 +1,6 @@
 import home from './home'
 import aboutUs from './aboutUs'
+import services from './services'
 import techs from './techs'
 import careers from './careers'
 import faqs from './faqs'
@@ -19,6 +20,7 @@ export default {
   readmore: 'Read more',
   home,
   aboutUs,
+  services,
   techs,
   careers,
   faqs,

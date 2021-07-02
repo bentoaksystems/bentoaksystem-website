@@ -1,9 +1,19 @@
 <template>
-  <div>Services</div>
+  <main class="Services">
+    <ServicesHero />
+  </main>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Services',
+}
 </script>
 
-<style></style>
+<style lang="scss">
+.Services {
+  @include addSpecificity {
+    padding: 0;
+  }
+}
+</style>
