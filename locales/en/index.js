@@ -1,6 +1,7 @@
 import home from './home'
 import aboutUs from './aboutUs'
 import services from './services'
+import teamExtension from './teamExtension'
 import techs from './techs'
 import careers from './careers'
 import faqs from './faqs'
@@ -21,6 +22,7 @@ export default {
   home,
   aboutUs,
   services,
+  teamExtension,
   techs,
   careers,
   faqs,

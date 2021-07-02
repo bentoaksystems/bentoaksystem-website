@@ -1,9 +1,13 @@
 <template>
-  <div>Services Team Extension</div>
+  <main>
+    <TeamExtensionHero />
+  </main>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'TeamExtension',
+}
 </script>
 
 <style></style>
