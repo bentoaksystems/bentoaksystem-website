@@ -20,4 +20,27 @@ export default {
     },
     btnLabel: 'sign me up',
   },
+  recruitment: {
+    title: 'We value your time',
+    text: 'We screen our recruits,  based on our Enhancive Recruitment Process:',
+    process: {
+      title1: 'Needs',
+      text1:
+        'Finding your prioritized needs, to find matching candidates for the position.',
+      title2: 'Interview',
+      text2:
+        'Our applicants are fully vetted in various fields before recommendation:',
+      item21: 'English test',
+      item22: 'Technical interview',
+      item23: 'Task assignment',
+      item24: 'HR interview',
+      title3: 'Report',
+      text3: 'We gather a full data-based report for you.',
+      title4: 'Client’s Interviews',
+      text4:
+        'This optional step is recommended for your satisfaction, to perform or assign your customized test or task on our candidates.',
+      title5: 'Recruitment',
+      text5: 'We recommend and you pick your dream team to go!',
+    },
+  },
 }

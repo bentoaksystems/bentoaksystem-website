@@ -2,6 +2,7 @@
   <main>
     <TeamExtensionHero />
     <TeamExtensionFlex />
+    <TeamExtensionRecruitment />
   </main>
 </template>
 
