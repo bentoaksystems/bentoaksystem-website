@@ -1,9 +1,13 @@
 <template>
-  <div>Services Planning</div>
+  <main>
+    <PlanningHero />
+  </main>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Planning',
+}
 </script>
 
 <style></style>

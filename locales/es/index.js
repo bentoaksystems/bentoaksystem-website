@@ -3,6 +3,7 @@ import aboutUs from './aboutUs'
 import services from './services'
 import teamExtension from './teamExtension'
 import managedTeam from './managedTeam'
+import planning from './planning'
 import techs from './techs'
 import careers from './careers'
 import faqs from './faqs'
@@ -25,6 +26,7 @@ export default {
   services,
   teamExtension,
   managedTeam,
+  planning,
   techs,
   careers,
   faqs,
