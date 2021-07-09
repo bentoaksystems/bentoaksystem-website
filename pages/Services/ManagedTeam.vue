@@ -1,9 +1,13 @@
 <template>
-  <div>Services Managed Teams</div>
+  <main>
+    <ManagedTeamHero />
+  </main>
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'ManagedTeam',
+}
 </script>
 
 <style></style>
