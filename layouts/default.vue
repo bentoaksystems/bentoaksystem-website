@@ -7,7 +7,21 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        // added to stop netlify deploys from being indexed
+        {
+          hid: 'robots',
+          name: 'robots',
+          content: 'noindex',
+        },
+      ],
+    }
+  },
+}
 </script>
 
 <style lang="scss">

@@ -1,6 +1,7 @@
 <template>
   <main>
     <ManagedTeamHero />
+    <ManagedTeamAgileTeam />
   </main>
 </template>
 
