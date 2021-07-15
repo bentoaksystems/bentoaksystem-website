@@ -1,6 +1,7 @@
 <template>
   <main>
     <PlanningHero />
+    <PlanningSteps />
   </main>
 </template>
 
