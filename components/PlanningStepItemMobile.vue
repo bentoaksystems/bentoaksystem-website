@@ -5,8 +5,13 @@
     <div class="PlanningStepItemMobile__imgContainer">
       <img :src="imgUrl" :alt="title" />
     </div>
-    <div class="PlanningStepItemMobile__listContainer">
-      <!-- <ul
+    <div
+      class="PlanningStepItemMobile__listContainer"
+      :style="{
+        backgroundImage: `url('${require('~/assets/images/services/planningBgMobile.svg')}')`,
+      }"
+    >
+      <ul
         class="PlanningStepItemMobile__list"
         :class="{ 'PlanningStepItemMobile__list--rtl': rtl }"
       >
@@ -32,7 +37,6 @@
           </template>
         </li>
       </ul>
-      <img :src="bgImgUrl" /> -->
     </div>
   </div>
 </template>
@@ -77,68 +81,81 @@ export default {
 
   &__listContainer {
     position: relative;
+    display: flex;
+    align-items: center;
     margin: 16px #{-$sidePadding} 0;
+    padding: 42px;
     height: 420px;
+    width: 100vw;
+    background-position: top right;
+    background-size: cover;
   }
 
-  // &__list {
-  //   position: absolute;
-  //   top: 40px;
-  //   left: 15%;
-  //   max-width: 78%;
-  //   max-height: 78%;
-  //   overflow-y: auto;
-  //   color: $white;
+  &__list {
+    max-height: 100%;
+    overflow-y: auto;
+    color: $white;
 
-  //   @include addSpecificity {
-  //     padding-left: 18px;
-  //   }
-  // }
+    @include addSpecificity {
+      padding-left: 32px;
+    }
+  }
 
-  // &__item {
-  //   position: relative;
-  //   font-weight: 700;
-  //   @include fontSize(20px);
+  &__item {
+    position: relative;
+    font-weight: 700;
+    color: $white;
+    @include fontSize(20px);
 
-  //   &::before {
-  //     content: '';
-  //     position: absolute;
-  //     left: -18px;
-  //     top: 10px;
-  //     display: block;
-  //     @include square(6px);
-  //     background-color: currentColor;
-  //     color: inherit;
-  //     border-radius: 99px;
-  //   }
+    &::before {
+      content: '';
+      position: absolute;
+      left: -18px;
+      top: 10px;
+      display: block;
+      @include square(6px);
+      background-color: currentColor;
+      color: inherit;
+      border-radius: 99px;
+    }
 
-  //   &:nth-child(n + 2) {
-  //     margin-top: 2px;
-  //   }
-  // }
+    &:nth-child(n + 2) {
+      margin-top: 2px;
+    }
+  }
 
-  // &__subList {
-  //   @include addSpecificity {
-  //     padding-left: 46px;
-  //   }
-  // }
+  &__subList {
+    @include addSpecificity {
+      padding-left: 46px;
+    }
+  }
 
-  // &__subItem {
-  //   position: relative;
-  //   font-weight: 500;
-  //   @include fontSize(16px);
+  &__subItem {
+    position: relative;
+    font-weight: 500;
+    @include fontSize(16px);
 
-  //   &::before {
-  //     content: '';
-  //     position: absolute;
-  //     left: -18px;
-  //     top: 10px;
-  //     display: block;
-  //     @include square(4px);
-  //     background-color: currentColor;
-  //     color: inherit;
-  //     border-radius: 99px;
-  //   }
-  // }
+    &::before {
+      content: '';
+      position: absolute;
+      left: -18px;
+      top: 10px;
+      display: block;
+      @include square(4px);
+      background-color: currentColor;
+      color: inherit;
+      border-radius: 99px;
+    }
+  }
+
+  @include respondTo(md) {
+    &__item {
+      @include fontSize(20px);
+
+      &:nth-child(n + 2) {
+        margin-top: 4px;
+      }
+    }
+  }
 }
 </style>

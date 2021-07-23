@@ -136,16 +136,18 @@ export default {
       @include fontSize(34px);
     }
 
+    &__button {
+      margin-top: 120px;
+    }
+  }
+
+  @include respondTo(lg) {
     &__item {
       margin-bottom: 220px;
 
       &:last-child {
         margin-bottom: 0;
       }
-    }
-
-    &__button {
-      margin-top: 120px;
     }
   }
 }
