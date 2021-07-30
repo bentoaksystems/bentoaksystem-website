@@ -53,4 +53,13 @@ export default {
     agileText:
       'to converge to your ideals in iterations, rethink, learn your needs and your world better incrementally, and apply rich feedback to get a rich product',
   },
+  form: {
+    title1: "Let's Get In Touch",
+    title2: '&',
+    title3: 'Hire A Team In 4 Simple Steps',
+    step1: 'Describe Your Project',
+    step2: 'We Contact You To Go Through Details',
+    step3: 'Approve Your Team',
+    step4: 'Launch Your Project',
+  },
 }
