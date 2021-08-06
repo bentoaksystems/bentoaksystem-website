@@ -22,7 +22,7 @@
           <Icon :name="locale.icon" class="SwitchLocale__itemFlag" />
           <span>{{ locale.name }}</span>
           <Icon
-            v-if="locale.selected"
+            v-if="activeLocale.code === locale.code"
             name="checkmark"
             class="SwitchLocale__itemCheckmark"
           />
@@ -79,6 +79,7 @@ export default {
 
   &__itemFlag {
     margin-right: 16px;
+    width: 32px;
   }
 
   &__itemCheckmark {
