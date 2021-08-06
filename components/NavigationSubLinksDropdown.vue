@@ -76,5 +76,9 @@ export default {
     border: none;
     background-color: transparent;
   }
+
+  .rotatingChevron svg {
+    color: #0041a0;
+  }
 }
 </style>

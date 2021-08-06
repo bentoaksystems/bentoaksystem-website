@@ -82,5 +82,9 @@ export default {
     display: flex;
     justify-content: flex-end;
   }
+
+  .rotatingChevron svg {
+    color: $white;
+  }
 }
 </style>

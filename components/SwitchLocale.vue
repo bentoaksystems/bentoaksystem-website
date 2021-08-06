@@ -64,6 +64,10 @@ export default {
 
   &__triggerIcon {
     margin-left: 8px;
+
+    svg {
+      color: #0041a0;
+    }
   }
 
   &__body {
