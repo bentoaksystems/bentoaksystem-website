@@ -53,6 +53,18 @@ export default {
     agileText:
       'to converge to your ideals in iterations, rethink, learn your needs and your world better incrementally, and apply rich feedback to get a rich product',
   },
+  testimonials: {
+    title1: 'Intuitive Design',
+    text1:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elite. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.',
+    name1: 'John Cooper',
+    jobTitle1: 'CEO at ABC Corporation',
+    title2: 'What does intuitive mean really?',
+    text2:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elite. Auctor neque sed imperdiet nibh lectus feugiat nunc sem.',
+    name2: 'Some Guy',
+    jobTitle2: 'Working at some company',
+  },
   form: {
     title1: "Let's Get In Touch",
     title2: '&',
