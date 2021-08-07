@@ -4,18 +4,22 @@
       <textarea
         v-if="isTextarea"
         :id="id"
+        :value="value"
         :name="name"
         :required="required"
         resize="none"
         class="BaseInput__input BaseInput__input--textarea"
+        @input="$emit('update', $event.target.value)"
       />
       <input
         v-else
         :id="id"
+        :value="value"
         :name="name"
         :type="type"
         :required="required"
         class="BaseInput__input"
+        @input="$emit('update', $event.target.value)"
       />
       <label class="BaseInput__label" :for="id">
         <span class="BaseInput__labelBG"></span>
@@ -36,23 +40,10 @@ export default {
     event: 'update',
   },
   props: {
-    value: {
-      type: String,
-      default: '',
-      require: true,
-    },
-    label: {
-      type: String,
-      require: true,
-    },
-    required: {
-      type: Boolean,
-      default: false,
-    },
-    name: {
-      type: String,
-      require: true,
-    },
+    value: { type: String, default: '', require: true },
+    label: { type: String, require: true },
+    required: { type: Boolean, default: false },
+    name: { type: String, require: true },
     type: {
       type: String,
       default: 'text',
