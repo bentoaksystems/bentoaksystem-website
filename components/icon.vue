@@ -19,6 +19,7 @@ import pin from '~/assets/images/icons/pin'
 import plus from '~/assets/images/icons/plus'
 import spanish from '~/assets/images/icons/spanish'
 import twitter from '~/assets/images/icons/twitter'
+import upload from '~/assets/images/icons/upload'
 
 const iconsMap = {
   checkmark,
@@ -37,6 +38,7 @@ const iconsMap = {
   plus,
   spanish,
   twitter,
+  upload,
 }
 
 export default {

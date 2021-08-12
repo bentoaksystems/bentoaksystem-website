@@ -1,8 +1,15 @@
 <template>
   <div class="BaseInput">
     <GradientBorder class="BaseInput__inputContainer" nested>
+      <BaseFileInput
+        v-if="isFileInput"
+        :id="id"
+        :name="name"
+        :files="value || []"
+        @update="$emit('update', $event)"
+      />
       <textarea
-        v-if="isTextarea"
+        v-else-if="isTextarea"
         :id="id"
         :value="value"
         :name="name"
@@ -21,11 +28,15 @@
         class="BaseInput__input"
         @input="$emit('update', $event.target.value)"
       />
-      <label class="BaseInput__label" :for="id">
+      <component
+        :is="isFileInput ? 'div' : 'label'"
+        class="BaseInput__label"
+        :for="id"
+      >
         <span class="BaseInput__labelBG"></span>
         <span>{{ $t(label) }}</span>
         <span v-if="required" class="BaseInput__required">*</span>
-      </label>
+      </component>
     </GradientBorder>
   </div>
 </template>
@@ -40,7 +51,7 @@ export default {
     event: 'update',
   },
   props: {
-    value: { type: String, default: '', require: true },
+    value: { type: [String, Array], default: '', require: true },
     label: { type: String, require: true },
     required: { type: Boolean, default: false },
     name: { type: String, require: true },
@@ -48,7 +59,7 @@ export default {
       type: String,
       default: 'text',
       validator(value) {
-        const whiteList = ['text', 'textarea', 'email']
+        const whiteList = ['text', 'textarea', 'email', 'file']
         return whiteList.includes(value)
       },
     },
@@ -59,6 +70,9 @@ export default {
     },
     isTextarea() {
       return this.type === 'textarea'
+    },
+    isFileInput() {
+      return this.type === 'file'
     },
   },
 }
