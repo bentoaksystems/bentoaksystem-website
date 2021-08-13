@@ -5,7 +5,7 @@
       class="LetsGetInTouchForm__input LetsGetInTouchForm__input--fname"
       type="text"
       name="fname"
-      label="First Name"
+      :label="$t('forms.fname')"
       :invalid="$v.fname.$anyError"
       :message="$t('forms.errors.required')"
       required
@@ -15,7 +15,7 @@
       class="LetsGetInTouchForm__input LetsGetInTouchForm__input--surname"
       type="text"
       name="surname"
-      label="Surname"
+      :label="$t('forms.surname')"
       :invalid="$v.surname.$anyError"
       :message="$t('forms.errors.required')"
       required
@@ -24,7 +24,7 @@
       v-model="email"
       class="LetsGetInTouchForm__input LetsGetInTouchForm__input--email"
       type="email"
-      label="Email"
+      :label="$t('forms.email')"
       :invalid="$v.email.$anyError"
       :message="emailErrorMessage"
       name="email"
@@ -35,41 +35,43 @@
       class="LetsGetInTouchForm__input LetsGetInTouchForm__input--phone"
       type="text"
       name="phone"
-      label="Phone"
+      :label="$t('forms.phone')"
     />
     <BaseInput
       v-model="company"
       class="LetsGetInTouchForm__input LetsGetInTouchForm__input--company"
       type="text"
       name="company"
-      label="Company Name"
+      :label="$t('forms.company')"
     />
     <BaseInput
       v-model="role"
       class="LetsGetInTouchForm__input LetsGetInTouchForm__input--role"
       type="text"
       name="role"
-      label="Role"
+      :label="$t('forms.role')"
     />
     <BaseInput
       v-model="interests"
       class="LetsGetInTouchForm__input LetsGetInTouchForm__input--interests"
       type="text"
       name="interests"
-      label="Interested In"
+      :label="$t('forms.interests')"
     />
     <BaseInput
       v-model="inquiry"
       class="LetsGetInTouchForm__input LetsGetInTouchForm__input--inquiry"
       type="textarea"
       name="inquiry"
-      label="Inquiry"
+      :label="$t('forms.inquiry')"
       :invalid="$v.inquiry.$anyError"
       :message="$t('forms.errors.required')"
       required
     />
     <div class="LetsGetInTouchForm__submitBox">
-      <BaseButton class="LetsGetInTouchForm__submitBtn">Send</BaseButton>
+      <BaseButton class="LetsGetInTouchForm__submitBtn">
+        {{ $t('forms.send') }}
+      </BaseButton>
     </div>
   </form>
 </template>
