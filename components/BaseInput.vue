@@ -13,7 +13,6 @@
         :id="id"
         :value="value"
         :name="name"
-        :required="required"
         resize="none"
         class="BaseInput__input BaseInput__input--textarea"
         @input="$emit('update', $event.target.value)"
@@ -23,8 +22,7 @@
         :id="id"
         :value="value"
         :name="name"
-        :type="type"
-        :required="required"
+        :type="isEmail ? 'text' : type"
         class="BaseInput__input"
         @input="$emit('update', $event.target.value)"
       />
@@ -76,6 +74,9 @@ export default {
     },
     isFileInput() {
       return this.type === 'file'
+    },
+    isEmail() {
+      return this.type === 'email'
     },
   },
 }
