@@ -34,7 +34,10 @@ export default {
 .LetsGetInTouch {
   &__container {
     padding: 24px 12px 30px;
-    border-radius: 8px;
+
+    @include addSpecificity {
+      border-radius: 8px;
+    }
 
     &::before {
       margin: -1px;
@@ -42,8 +45,11 @@ export default {
     }
 
     @include respondTo(md) {
-      border-radius: 16px;
       padding: 68px 80px 108px;
+
+      @include addSpecificity {
+        border-radius: 16px;
+      }
     }
   }
 
