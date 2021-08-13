@@ -3,6 +3,7 @@
     <AboutUsHero class="AboutUs__hero" />
     <AboutUsWhyUs class="AboutUs__whyUs" />
     <AboutUsOurMission class="AboutUs__ourMission" />
+    <LetsGetInTouch />
   </main>
 </template>
 

@@ -115,12 +115,10 @@ export default {
     @include fontSize(20px);
   }
 
-  &__item {
-    margin-bottom: 76px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 76px;
   }
 
   &__button {
@@ -142,12 +140,8 @@ export default {
   }
 
   @include respondTo(lg) {
-    &__item {
-      margin-bottom: 220px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+    &__list {
+      row-gap: 220px;
     }
   }
 }
