@@ -1,6 +1,10 @@
 <template>
   <div class="BaseInput">
-    <GradientBorder class="BaseInput__inputContainer" nested>
+    <GradientBorder
+      class="BaseInput__inputContainer"
+      :class="{ 'BaseInput__inputContainer--fileInput': isFileInput }"
+      nested
+    >
       <BaseFileInput
         v-if="isFileInput"
         :id="id"
@@ -85,6 +89,8 @@ export default {
 <style lang="scss">
 .BaseInput {
   position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 12px 0 0;
 
   &__inputContainer {
@@ -95,6 +101,12 @@ export default {
     &::before {
       margin: -1px;
       background: $gradientForm;
+    }
+
+    &--fileInput {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
   }
 

@@ -97,6 +97,7 @@ export default {
 
 <style lang="scss">
 .BaseFileInput {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
