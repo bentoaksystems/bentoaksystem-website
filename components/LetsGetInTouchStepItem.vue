@@ -48,6 +48,7 @@ $borderWidth: 3px;
   flex-direction: column;
   align-items: center;
   padding: 24px 18px;
+  width: 100%;
   color: $blue;
   font-weight: 500;
 
