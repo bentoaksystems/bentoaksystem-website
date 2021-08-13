@@ -1,4 +1,8 @@
 export default {
+  title1: "Let's Get In Touch",
+  title2: '&',
+  title3: 'Hire A Team In 4 Simple Steps',
+  title4: 'Start your new career',
   fname: 'First Name',
   surname: 'Surname',
   email: 'Email',
@@ -8,9 +12,23 @@ export default {
   interests: 'Interested In',
   inquiry: 'Inquiry',
   regarding: 'Regarding',
+  specialty: 'Specialty',
   send: 'Send',
+  sendRequest: 'Send My Request',
   submitMessage1: 'Thank you for your interest.',
   submitMessage2: 'A confirmation email has been sent to you.',
+  letsGetInTouch: {
+    step1: 'Describe Your Project',
+    step2: 'We Contact You To Go Through Details',
+    step3: 'Approve Your Team',
+    step4: 'Launch Your Project',
+  },
+  newCareer: {
+    step1: 'Describe Your self',
+    step2: 'We Contact You To Go Through Details',
+    step3: 'HR Process',
+    step4: 'Launch Your career',
+  },
   somethingElse: {
     title: 'Something else on your mind?',
     sub: 'Let us know.',
