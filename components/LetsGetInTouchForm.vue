@@ -69,16 +69,11 @@
       required
     />
     <div class="LetsGetInTouchForm__submitBox">
-      <transition name="fade">
-        <div v-if="sentSuccessfully" class="LetsGetInTouchForm__successMessage">
-          <span class="LetsGetInTouchForm__successMessageMain">
-            {{ $t('forms.submitMessage1') }}
-          </span>
-          <span class="LetsGetInTouchForm__successMessageInfo">
-            {{ $t('forms.submitMessage2') }}
-          </span>
-        </div>
-      </transition>
+      <FormSuccessMessage
+        :show="sentSuccessfully"
+        :message-main="$t('forms.submitMessage1')"
+        :message-sub="$t('forms.submitMessage2')"
+      />
       <BaseButton class="LetsGetInTouchForm__submitBtn">
         {{ $t('forms.send') }}
       </BaseButton>
@@ -157,32 +152,9 @@ export default {
     height: 150px;
   }
 
-  &__successMessage {
-    text-align: center;
-    font-weight: 500;
-    @include gradientText($gradient3);
-  }
-
-  &__successMessageMain {
-    display: block;
-  }
-
-  &__successMessageInfo {
-    @include fontSize(14px);
-  }
-
   &__submitBtn {
     margin-top: auto;
     padding: 12px 56px;
-  }
-
-  .fade-enter-active,
-  .fade-leave-active {
-    transition: opacity 0.3s;
-  }
-  .fade-enter,
-  .fade-leave-to {
-    opacity: 0;
   }
 }
 </style>
