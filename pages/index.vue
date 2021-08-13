@@ -6,7 +6,7 @@
     <HomeYourNeeds />
     <HomeWhyUs />
     <HomeTestimonials class="HomePage__testimonials" />
-    <HomeLetsGetInTouch />
+    <LetsGetInTouch class="HomePage__letsGetInTouch" />
   </main>
 </template>
 
@@ -29,6 +29,16 @@ export default {
   @include respondTo(md) {
     &__testimonials {
       margin-top: 24px;
+    }
+  }
+
+  &__letsGetInTouch {
+    margin-top: 48px;
+    margin-bottom: 48px;
+
+    @include respondTo(md) {
+      margin-top: 64px;
+      margin-bottom: 64px;
     }
   }
 }
