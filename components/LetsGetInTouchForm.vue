@@ -69,6 +69,16 @@
       required
     />
     <div class="LetsGetInTouchForm__submitBox">
+      <transition name="fade">
+        <div v-if="sentSuccessfully" class="LetsGetInTouchForm__successMessage">
+          <span class="LetsGetInTouchForm__successMessageMain">
+            {{ $t('forms.submitMessage1') }}
+          </span>
+          <span class="LetsGetInTouchForm__successMessageInfo">
+            {{ $t('forms.submitMessage2') }}
+          </span>
+        </div>
+      </transition>
       <BaseButton class="LetsGetInTouchForm__submitBtn">
         {{ $t('forms.send') }}
       </BaseButton>
@@ -91,6 +101,7 @@ export default {
       role: '',
       interests: '',
       inquiry: '',
+      sentSuccessfully: false,
     }
   },
   computed: {
@@ -112,7 +123,10 @@ export default {
       this.$v.$touch()
       if (this.$v.$invalid) return
 
-      console.log(this)
+      this.sentSuccessfully = true
+      setTimeout(() => {
+        this.sentSuccessfully = false
+      }, 3000)
     },
   },
 }
@@ -143,9 +157,32 @@ export default {
     height: 150px;
   }
 
+  &__successMessage {
+    text-align: center;
+    font-weight: 500;
+    @include gradientText($gradient3);
+  }
+
+  &__successMessageMain {
+    display: block;
+  }
+
+  &__successMessageInfo {
+    @include fontSize(14px);
+  }
+
   &__submitBtn {
     margin-top: auto;
     padding: 12px 56px;
+  }
+
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.3s;
+  }
+  .fade-enter,
+  .fade-leave-to {
+    opacity: 0;
   }
 }
 </style>
