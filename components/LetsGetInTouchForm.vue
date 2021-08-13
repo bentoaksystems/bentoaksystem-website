@@ -6,6 +6,8 @@
       type="text"
       name="fname"
       label="First Name"
+      :invalid="$v.fname.$anyError"
+      :message="$t('forms.errors.required')"
       required
     />
     <BaseInput
@@ -14,14 +16,18 @@
       type="text"
       name="surname"
       label="Surname"
+      :invalid="$v.surname.$anyError"
+      :message="$t('forms.errors.required')"
       required
     />
     <BaseInput
       v-model="email"
       class="LetsGetInTouchForm__input LetsGetInTouchForm__input--email"
       type="email"
-      name="email"
       label="Email"
+      :invalid="$v.email.$anyError"
+      :message="emailErrorMessage"
+      name="email"
       required
     />
     <BaseInput
@@ -58,6 +64,8 @@
       type="textarea"
       name="inquiry"
       label="Inquiry"
+      :invalid="$v.inquiry.$anyError"
+      :message="$t('forms.errors.required')"
       required
     />
     <div class="LetsGetInTouchForm__submitBox">
@@ -67,6 +75,8 @@
 </template>
 
 <script>
+import { required, email } from 'vuelidate/lib/validators'
+
 export default {
   name: 'LetsGetInTouchForm',
   data() {
@@ -81,10 +91,26 @@ export default {
       inquiry: '',
     }
   },
+  computed: {
+    emailErrorMessage() {
+      return this.$v.email.email
+        ? this.$t('forms.errors.required')
+        : this.$t('forms.errors.email')
+    },
+  },
+  validations: {
+    fname: { required },
+    surname: { required },
+    email: { required, email },
+    inquiry: { required },
+  },
   methods: {
-    onSubmit(event) {
+    onSubmit() {
       // ToDo connect to api / add submit validation
-      console.log(event)
+      this.$v.$touch()
+      if (this.$v.$invalid) return
+
+      console.log(this)
     },
   },
 }

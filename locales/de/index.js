@@ -7,6 +7,7 @@ import planning from './planning'
 import techs from './techs'
 import careers from './careers'
 import faqs from './faqs'
+import forms from './forms'
 
 export default {
   navLinks: {
@@ -30,4 +31,5 @@ export default {
   techs,
   careers,
   faqs,
+  forms,
 }
