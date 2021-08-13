@@ -32,7 +32,7 @@
         :for="id"
       >
         <span class="BaseInput__labelBG"></span>
-        <span>{{ $t(label) }}</span>
+        <span>{{ label }}</span>
         <span v-if="required" class="BaseInput__required">*</span>
       </component>
     </GradientBorder>
