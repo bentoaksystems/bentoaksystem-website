@@ -38,6 +38,7 @@
         <span v-if="required" class="BaseInput__required">*</span>
       </component>
     </GradientBorder>
+    <div v-if="invalid" class="BaseInput__message">{{ message }}</div>
   </div>
 </template>
 
@@ -63,6 +64,8 @@ export default {
         return whiteList.includes(value)
       },
     },
+    invalid: { type: Boolean, default: false },
+    message: { type: String },
   },
   computed: {
     id() {
@@ -151,6 +154,12 @@ export default {
       padding: 22px;
       height: 240px;
     }
+  }
+
+  &__message {
+    padding: 2px 12px 0;
+    color: $red;
+    @include fontSize(14px);
   }
 }
 </style>
