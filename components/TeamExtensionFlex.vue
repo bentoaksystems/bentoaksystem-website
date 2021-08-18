@@ -7,7 +7,7 @@
         v-bind="item"
       />
     </div>
-    <BaseButton :to="'#form'" class="TeamExtensionFlex__button">{{
+    <BaseButton v-scroll-to="'#form'" class="TeamExtensionFlex__button">{{
       $t('teamExtension.flex.btnLabel')
     }}</BaseButton>
   </Container>

@@ -5,7 +5,7 @@
       <br />
       {{ $t('techs.cta.textLine2') }}
     </h4>
-    <BaseButton to="#cta-form" class="TechsCta__button">
+    <BaseButton v-scroll-to="'#form'" class="TechsCta__button">
       {{ $t('techs.cta.button') }}
     </BaseButton>
   </Container>

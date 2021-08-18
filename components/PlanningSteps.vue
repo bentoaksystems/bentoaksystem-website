@@ -23,7 +23,7 @@
         />
       </template>
     </div>
-    <BaseButton class="PlanningSteps__button">
+    <BaseButton v-scroll-to="'#form'" class="PlanningSteps__button">
       {{ $t('planning.buttonLabel') }}
     </BaseButton>
   </Container>

@@ -1,5 +1,5 @@
 <template>
-  <Container tag="section" class="LetsGetInTouch">
+  <Container id="form" tag="section" class="LetsGetInTouch">
     <GradientBorder class="LetsGetInTouch__container">
       <h3 class="LetsGetInTouch__title">
         {{ $t('forms.title1') }}

@@ -5,11 +5,11 @@
       <div class="HomeHero__content">
         <div class="HomeHero__subheadContainer">
           <h3 class="HomeHero__subhead">{{ $t('home.subhead') }}</h3>
-          <NuxtLink :to="localePath('/')" class="HomeHero__readmore">
+          <NuxtLink :to="localePath('/services')" class="HomeHero__readmore">
             {{ $t('readmore') }}
           </NuxtLink>
         </div>
-        <BaseButton class="HomeHero__cta">
+        <BaseButton v-scroll-to="'#form'" class="HomeHero__cta">
           {{ $t('home.cta') }}
         </BaseButton>
       </div>
