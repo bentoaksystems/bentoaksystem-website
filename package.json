@@ -19,6 +19,7 @@
     "v-dropdown-menu": "^1.3.2",
     "vue-agile": "^1.1.3",
     "vue-screen": "^1.5.4",
+    "vue-scrollto": "^2.20.0",
     "vuelidate": "^0.7.6"
   },
   "devDependencies": {

@@ -52,6 +52,7 @@ export default {
     '@nuxt/content',
     '@nuxtjs/style-resources',
     'nuxt-i18n',
+    'vue-scrollto/nuxt',
   ],
 
   i18n: {
