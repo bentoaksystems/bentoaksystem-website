@@ -13,6 +13,7 @@ export default {
   inquiry: 'Inquiry',
   regarding: 'Regarding',
   specialty: 'Specialty',
+  files: 'files',
   send: 'Send',
   sendRequest: 'Send My Request',
   submitMessage1: 'Thank you for your interest.',
