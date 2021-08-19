@@ -1,82 +1,71 @@
 <template>
   <form class="LetsGetInTouchForm" @submit.prevent="onSubmit">
-    <BaseInput
-      v-model="fname"
-      class="LetsGetInTouchForm__input LetsGetInTouchForm__input--fname"
-      type="text"
-      name="fname"
-      :label="$t('forms.fname')"
-      :invalid="$v.fname.$anyError"
-      :message="$t('forms.errors.required')"
-      required
-    />
-    <BaseInput
-      v-model="surname"
-      class="LetsGetInTouchForm__input LetsGetInTouchForm__input--surname"
-      type="text"
-      name="surname"
-      :label="$t('forms.surname')"
-      :invalid="$v.surname.$anyError"
-      :message="$t('forms.errors.required')"
-      required
-    />
-    <BaseInput
-      v-model="email"
-      class="LetsGetInTouchForm__input LetsGetInTouchForm__input--email"
-      type="email"
-      :label="$t('forms.email')"
-      :invalid="$v.email.$anyError"
-      :message="emailErrorMessage"
-      name="email"
-      required
-    />
-    <BaseInput
-      v-model="phone"
-      class="LetsGetInTouchForm__input LetsGetInTouchForm__input--phone"
-      type="text"
-      name="phone"
-      :label="$t('forms.phone')"
-    />
-    <BaseInput
-      v-model="company"
-      class="LetsGetInTouchForm__input LetsGetInTouchForm__input--company"
-      type="text"
-      name="company"
-      :label="$t('forms.company')"
-    />
-    <BaseInput
-      v-model="role"
-      class="LetsGetInTouchForm__input LetsGetInTouchForm__input--role"
-      type="text"
-      name="role"
-      :label="$t('forms.role')"
-    />
-    <BaseInput
-      v-model="interests"
-      class="LetsGetInTouchForm__input LetsGetInTouchForm__input--interests"
-      type="text"
-      name="interests"
-      :label="$t('forms.interests')"
-    />
-    <BaseInput
-      v-model="inquiry"
-      class="LetsGetInTouchForm__input LetsGetInTouchForm__input--inquiry"
-      type="textarea"
-      name="inquiry"
-      :label="$t('forms.inquiry')"
-      :invalid="$v.inquiry.$anyError"
-      :message="$t('forms.errors.required')"
-      required
-    />
-    <div class="LetsGetInTouchForm__submitBox">
-      <FormSuccessMessage
-        :show="sentSuccessfully"
-        :message-main="$t('forms.submitMessage1')"
-        :message-sub="$t('forms.submitMessage2')"
+    <div v-show="isDesktop" class="LetsGetInTouchForm__desktopForm">
+      <BaseInput
+        v-for="input of inputs"
+        :key="input.name"
+        v-model="form[input.name]"
+        :class="[
+          'LetsGetInTouchForm__input',
+          `LetsGetInTouchForm__input--${input.name}`,
+        ]"
+        v-bind="input"
       />
-      <BaseButton class="LetsGetInTouchForm__submitBtn">
-        {{ $t('forms.send') }}
-      </BaseButton>
+      <div class="LetsGetInTouchForm__submitBox">
+        <FormSuccessMessage
+          :show="sentSuccessfully"
+          :message-main="$t('forms.submitMessage1')"
+          :message-sub="$t('forms.submitMessage2')"
+        />
+        <BaseButton class="LetsGetInTouchForm__submitBtn">
+          {{ $t('forms.send') }}
+        </BaseButton>
+      </div>
+    </div>
+    <div v-show="!isDesktop" class="LetsGetInTouchForm__mobileForm">
+      <agile v-bind="carouselOptions" ref="formCarousel">
+        <div
+          v-for="(slide, index) of mobileInputs"
+          :key="index"
+          class="LetsGetInTouchForm__slide"
+        >
+          <BaseInput
+            v-for="input of slide"
+            :key="input.name"
+            v-model="form[input.name]"
+            :class="[
+              'LetsGetInTouchForm__input',
+              `LetsGetInTouchForm__input--${input.name}`,
+            ]"
+            v-bind="input"
+          />
+          <div
+            v-if="index < mobileInputs.length - 1"
+            class="LetsGetInTouchForm__nextBtnBox"
+          >
+            <BaseButton
+              class="LetsGetInTouchForm__nextBtn"
+              type="button"
+              @click="$refs.formCarousel.goToNext()"
+            >
+              {{ $t('forms.next') }}
+            </BaseButton>
+          </div>
+          <div
+            v-if="index === mobileInputs.length - 1"
+            class="LetsGetInTouchForm__submitBox"
+          >
+            <FormSuccessMessage
+              :show="sentSuccessfully"
+              :message-main="$t('forms.submitMessage1')"
+              :message-sub="$t('forms.submitMessage2')"
+            />
+            <BaseButton class="LetsGetInTouchForm__submitBtn">
+              {{ $t('forms.send') }}
+            </BaseButton>
+          </div>
+        </div>
+      </agile>
     </div>
   </form>
 </template>
@@ -88,29 +77,92 @@ export default {
   name: 'LetsGetInTouchForm',
   data() {
     return {
-      fname: '',
-      surname: '',
-      email: '',
-      phone: '',
-      company: '',
-      role: '',
-      interests: '',
-      inquiry: '',
+      form: {
+        fname: '',
+        surname: '',
+        email: '',
+        phone: '',
+        company: '',
+        role: '',
+        interests: '',
+        inquiry: '',
+      },
       sentSuccessfully: false,
     }
   },
   computed: {
+    inputs() {
+      return [
+        this.makeInputObj(
+          'fname',
+          'text',
+          this.$t('forms.fname'),
+          this.$v.form.fname.$anyError,
+          this.$t('forms.errors.required'),
+          true
+        ),
+        this.makeInputObj(
+          'surname',
+          'text',
+          this.$t('forms.surname'),
+          this.$v.form.surname.$anyError,
+          this.$t('forms.errors.required'),
+          true
+        ),
+        this.makeInputObj(
+          'email',
+          'email',
+          this.$t('forms.email'),
+          this.$v.form.email.$anyError,
+          this.emailErrorMessage,
+          true
+        ),
+        this.makeInputObj('phone', 'text', this.$t('forms.phone')),
+        this.makeInputObj('company', 'text', this.$t('forms.company')),
+        this.makeInputObj('role', 'text', this.$t('forms.role')),
+        this.makeInputObj('interests', 'text', this.$t('forms.interests')),
+        this.makeInputObj(
+          'inquiry',
+          'textarea',
+          this.$t('forms.inquiry'),
+          this.$v.form.inquiry.$anyError,
+          this.$t('forms.errors.required'),
+          true
+        ),
+      ]
+    },
+    mobileInputs() {
+      const [fname, surname, email, phone, company, role, interests, inquiry] =
+        this.inputs
+
+      return [
+        [fname, surname, email],
+        [phone, company, role, interests],
+        [inquiry],
+      ]
+    },
+    isDesktop() {
+      return this.$screen.md
+    },
+    carouselOptions() {
+      return {
+        navButtons: false,
+        infinite: false,
+      }
+    },
     emailErrorMessage() {
-      return this.$v.email.email
+      return this.$v.form.email.email
         ? this.$t('forms.errors.required')
         : this.$t('forms.errors.email')
     },
   },
   validations: {
-    fname: { required },
-    surname: { required },
-    email: { required, email },
-    inquiry: { required },
+    form: {
+      fname: { required },
+      surname: { required },
+      email: { required, email },
+      inquiry: { required },
+    },
   },
   methods: {
     onSubmit() {
@@ -123,26 +175,57 @@ export default {
         this.sentSuccessfully = false
       }, 3000)
     },
+    makeInputObj(name, type, label, invalid, message, required) {
+      return {
+        name,
+        type,
+        label,
+        invalid,
+        message,
+        required,
+      }
+    },
   },
 }
 </script>
 
 <style lang="scss">
 .LetsGetInTouchForm {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  column-gap: 30px;
-  row-gap: 20px;
+  &__desktopForm {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 30px;
+    row-gap: 20px;
 
-  @include respondTo(md) {
-    grid-template-columns: repeat(2, 1fr);
-    row-gap: 24px;
+    @include respondTo(md) {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 24px;
+    }
+  }
+
+  &__mobileForm {
+    .agile__actions {
+      display: none;
+    }
+  }
+
+  &__slide {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &__input {
     &--inquiry {
       grid-row-end: span 2;
     }
+  }
+
+  &__nextBtnBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   &__submitBox {
