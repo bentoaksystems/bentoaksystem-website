@@ -14,6 +14,7 @@ export default {
   regarding: 'Regarding',
   specialty: 'Specialty',
   files: 'files',
+  next: 'next',
   send: 'Send',
   sendRequest: 'Send My Request',
   submitMessage1: 'Thank you for your interest.',
