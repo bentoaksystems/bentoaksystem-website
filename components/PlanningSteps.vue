@@ -137,6 +137,10 @@ export default {
     &__button {
       margin-top: 120px;
     }
+
+    &__list {
+      margin-top: 64px;
+    }
   }
 
   @include respondTo(lg) {

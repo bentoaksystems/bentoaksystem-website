@@ -14,6 +14,11 @@ export default {
 
 <style lang="scss">
 .Planning {
+  background-image: url('./assets/images/services/PlanningRainbow.svg');
+  background-position: center;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+
   &__form {
     margin-top: 64px;
     margin-bottom: 32px;
