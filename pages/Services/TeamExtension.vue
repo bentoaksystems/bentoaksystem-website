@@ -1,8 +1,9 @@
 <template>
-  <main>
+  <main class="TeamExtension">
     <TeamExtensionHero />
     <TeamExtensionFlex />
     <TeamExtensionRecruitment />
+    <LetsGetInTouch class="TeamExtension__form" />
   </main>
 </template>
 
@@ -12,4 +13,15 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="scss">
+.TeamExtension {
+  &__form {
+    margin-bottom: 32px;
+
+    @include respondTo(md) {
+      margin-top: 64px;
+      margin-bottom: 64px;
+    }
+  }
+}
+</style>

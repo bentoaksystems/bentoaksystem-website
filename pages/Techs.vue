@@ -4,6 +4,7 @@
     <TechsWebTechs class="Techs__section Techs__section--webTechs" />
     <TechsCta class="Techs__section Techs__section--cta" />
     <TechsBenefits class="Techs__section Techs__section--benefits" />
+    <LetsGetInTouch class="Techs__section Techs__section--form" />
   </main>
 </template>
 
@@ -37,6 +38,14 @@ export default {
 
       @include respondTo(md) {
         margin-bottom: 160px;
+      }
+    }
+
+    &--form {
+      margin-bottom: 46px;
+
+      @include respondTo(md) {
+        margin-bottom: 64px;
       }
     }
   }

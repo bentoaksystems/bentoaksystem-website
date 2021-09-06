@@ -1,7 +1,8 @@
 <template>
   <main class="FAQs">
     <FAQsHero />
-    <FAQsTabs />
+    <FAQsTabs class="FAQs__tabs" />
+    <SomethingElse class="FAQs__form" />
   </main>
 </template>
 
@@ -19,5 +20,23 @@ export default {
     rgba(146, 174, 254, 0.0256) 18.49%,
     rgba(255, 244, 153, 0.112) 67.68%
   );
+
+  &__tabs {
+    padding-bottom: 74px;
+  }
+
+  &__form {
+    padding-bottom: 24px;
+  }
+
+  @include respondTo(md) {
+    &__tabs {
+      padding-bottom: 280px;
+    }
+
+    &__form {
+      padding-bottom: 74px;
+    }
+  }
 }
 </style>

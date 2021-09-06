@@ -1,50 +1,94 @@
 <template>
-  <form class="LetsGetInTouchForm" @submit.prevent="onSubmit">
-    <div v-show="isDesktop" class="LetsGetInTouchForm__desktopForm">
+  <form class="SomethingElseForm" @submit.prevent="onSubmit">
+    <div v-show="isDesktop" class="SomethingElseForm__desktopForm">
       <BaseInput
-        v-for="input of inputs"
-        :key="input.name"
-        v-model="form[input.name]"
-        :class="[
-          'LetsGetInTouchForm__input',
-          `LetsGetInTouchForm__input--${input.name}`,
-        ]"
-        v-bind="input"
+        v-model="fname"
+        class="SomethingElseForm__input"
+        type="text"
+        name="fname"
+        :label="$t('forms.fname')"
+        :invalid="$v.fname.$anyError"
+        :message="$t('forms.errors.required')"
+        required
       />
-      <div class="LetsGetInTouchForm__submitBox">
+      <BaseInput
+        v-model="surname"
+        class="SomethingElseForm__input"
+        type="text"
+        name="surname"
+        :label="$t('forms.surname')"
+        :invalid="$v.surname.$anyError"
+        :message="$t('forms.errors.required')"
+        required
+      />
+      <BaseInput
+        v-model="email"
+        class="SomethingElseForm__input"
+        type="email"
+        :label="$t('forms.email')"
+        :invalid="$v.email.$anyError"
+        :message="emailErrorMessage"
+        name="email"
+        required
+      />
+      <BaseInput
+        v-model="phone"
+        class="SomethingElseForm__input"
+        type="text"
+        name="phone"
+        :label="$t('forms.phone')"
+      />
+      <BaseInput
+        v-model="regarding"
+        class="SomethingElseForm__input"
+        type="text"
+        name="regarding"
+        :label="$t('forms.regarding')"
+      />
+      <BaseInput
+        v-model="inquiry"
+        class="SomethingElseForm__input SomethingElseForm__input--inquiry"
+        type="textarea"
+        name="inquiry"
+        :label="$t('forms.inquiry')"
+        :invalid="$v.inquiry.$anyError"
+        :message="$t('forms.errors.required')"
+        required
+      />
+      <div class="SomethingElseForm__submitBox">
         <FormSuccessMessage
           :show="sentSuccessfully"
           :message-main="$t('forms.submitMessage1')"
           :message-sub="$t('forms.submitMessage2')"
         />
-        <BaseButton class="LetsGetInTouchForm__submitBtn">
+        <BaseButton class="SomethingElseForm__submitBtn">
           {{ $t('forms.send') }}
         </BaseButton>
       </div>
     </div>
-    <div v-show="!isDesktop" class="LetsGetInTouchForm__mobileForm">
+    <div v-show="!isDesktop" class="SomethingElseForm__mobileForm">
       <agile v-bind="carouselOptions" ref="formCarousel">
         <div
           v-for="(slide, index) of mobileInputs"
           :key="index"
-          class="LetsGetInTouchForm__slide"
+          class="SomethingElseForm__slide"
         >
           <BaseInput
             v-for="input of slide"
             :key="input.name"
             v-model="form[input.name]"
             :class="[
-              'LetsGetInTouchForm__input',
-              `LetsGetInTouchForm__input--${input.name}`,
+              'SomethingElseForm__input',
+              `SomethingElseForm__input--${input.name}`,
             ]"
             v-bind="input"
           />
           <div
             v-if="index < mobileInputs.length - 1"
-            class="LetsGetInTouchForm__nextBtnBox"
+            class="SomethingElseForm__nextBtnBox"
           >
             <BaseButton
-              class="LetsGetInTouchForm__nextBtn"
+              class="SomethingElseForm__nextBtn"
               type="button"
               @click="$refs.formCarousel.goToNext()"
             >
@@ -53,14 +97,14 @@
           </div>
           <div
             v-if="index === mobileInputs.length - 1"
-            class="LetsGetInTouchForm__submitBox"
+            class="SomethingElseForm__submitBox"
           >
             <FormSuccessMessage
               :show="sentSuccessfully"
               :message-main="$t('forms.submitMessage1')"
               :message-sub="$t('forms.submitMessage2')"
             />
-            <BaseButton class="LetsGetInTouchForm__submitBtn">
+            <BaseButton class="SomethingElseForm__submitBtn">
               {{ $t('forms.send') }}
             </BaseButton>
           </div>
@@ -74,7 +118,7 @@
 import { required, email } from 'vuelidate/lib/validators'
 
 export default {
-  name: 'LetsGetInTouchForm',
+  name: 'SomethingElseForm',
   data() {
     return {
       form: {
@@ -82,11 +126,15 @@ export default {
         surname: '',
         email: '',
         phone: '',
-        company: '',
-        role: '',
-        interests: '',
+        regarding: '',
         inquiry: '',
       },
+      fname: '',
+      surname: '',
+      email: '',
+      phone: '',
+      regarding: '',
+      inquiry: '',
       sentSuccessfully: false,
     }
   },
@@ -118,9 +166,7 @@ export default {
           true
         ),
         this.makeInputObj('phone', 'text', this.$t('forms.phone')),
-        this.makeInputObj('company', 'text', this.$t('forms.company')),
-        this.makeInputObj('role', 'text', this.$t('forms.role')),
-        this.makeInputObj('interests', 'text', this.$t('forms.interests')),
+        this.makeInputObj('regarding', 'text', this.$t('forms.regarding')),
         this.makeInputObj(
           'inquiry',
           'textarea',
@@ -132,14 +178,9 @@ export default {
       ]
     },
     mobileInputs() {
-      const [fname, surname, email, phone, company, role, interests, inquiry] =
-        this.inputs
+      const [fname, surname, email, phone, regarding, inquiry] = this.inputs
 
-      return [
-        [fname, surname, email],
-        [phone, company, role, interests],
-        [inquiry],
-      ]
+      return [[fname, surname, email], [phone, regarding], [inquiry]]
     },
     isDesktop() {
       return this.$screen.md
@@ -163,13 +204,17 @@ export default {
       email: { required, email },
       inquiry: { required },
     },
+    fname: { required },
+    surname: { required },
+    email: { required, email },
+    inquiry: { required },
   },
   methods: {
     onSubmit() {
-      // ToDo connect to api / add submit validation
       this.$v.$touch()
       if (this.$v.$invalid) return
 
+      // ToDo connect to api
       this.sentSuccessfully = true
       setTimeout(() => {
         this.sentSuccessfully = false
@@ -190,7 +235,7 @@ export default {
 </script>
 
 <style lang="scss">
-.LetsGetInTouchForm {
+.SomethingElseForm {
   &__desktopForm {
     display: grid;
     grid-template-columns: repeat(1, 1fr);

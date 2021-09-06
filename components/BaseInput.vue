@@ -1,12 +1,22 @@
 <template>
   <div class="BaseInput">
-    <GradientBorder class="BaseInput__inputContainer" nested>
+    <GradientBorder
+      class="BaseInput__inputContainer"
+      :class="{ 'BaseInput__inputContainer--fileInput': isFileInput }"
+      nested
+    >
+      <BaseFileInput
+        v-if="isFileInput"
+        :id="id"
+        :name="name"
+        :files="value || []"
+        @update="$emit('update', $event)"
+      />
       <textarea
-        v-if="isTextarea"
+        v-else-if="isTextarea"
         :id="id"
         :value="value"
         :name="name"
-        :required="required"
         resize="none"
         class="BaseInput__input BaseInput__input--textarea"
         @input="$emit('update', $event.target.value)"
@@ -16,17 +26,21 @@
         :id="id"
         :value="value"
         :name="name"
-        :type="type"
-        :required="required"
+        :type="isEmail ? 'text' : type"
         class="BaseInput__input"
         @input="$emit('update', $event.target.value)"
       />
-      <label class="BaseInput__label" :for="id">
+      <component
+        :is="isFileInput ? 'div' : 'label'"
+        class="BaseInput__label"
+        :for="id"
+      >
         <span class="BaseInput__labelBG"></span>
-        <span>{{ $t(label) }}</span>
+        <span>{{ label }}</span>
         <span v-if="required" class="BaseInput__required">*</span>
-      </label>
+      </component>
     </GradientBorder>
+    <div v-if="invalid" class="BaseInput__message">{{ message }}</div>
   </div>
 </template>
 
@@ -40,7 +54,7 @@ export default {
     event: 'update',
   },
   props: {
-    value: { type: String, default: '', require: true },
+    value: { type: [String, Array], default: '', require: true },
     label: { type: String, require: true },
     required: { type: Boolean, default: false },
     name: { type: String, require: true },
@@ -48,10 +62,12 @@ export default {
       type: String,
       default: 'text',
       validator(value) {
-        const whiteList = ['text', 'textarea', 'email']
+        const whiteList = ['text', 'textarea', 'email', 'file']
         return whiteList.includes(value)
       },
     },
+    invalid: { type: Boolean, default: false },
+    message: { type: String },
   },
   computed: {
     id() {
@@ -60,6 +76,12 @@ export default {
     isTextarea() {
       return this.type === 'textarea'
     },
+    isFileInput() {
+      return this.type === 'file'
+    },
+    isEmail() {
+      return this.type === 'email'
+    },
   },
 }
 </script>
@@ -67,6 +89,8 @@ export default {
 <style lang="scss">
 .BaseInput {
   position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 12px 0 0;
 
   &__inputContainer {
@@ -77,6 +101,12 @@ export default {
     &::before {
       margin: -1px;
       background: $gradientForm;
+    }
+
+    &--fileInput {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
     }
   }
 
@@ -137,6 +167,12 @@ export default {
       padding: 22px;
       height: 240px;
     }
+  }
+
+  &__message {
+    padding: 2px 12px 0;
+    color: $red;
+    @include fontSize(14px);
   }
 }
 </style>

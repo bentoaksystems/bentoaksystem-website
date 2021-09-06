@@ -10,7 +10,13 @@
             variant="headerMenuMobile"
             class="HeaderMenuMobile__navList"
           />
-          <BaseButton class="HeaderMenuMobile__CTA"> Call us </BaseButton>
+          <BaseButton
+            v-scroll-to="'#form'"
+            class="HeaderMenuMobile__CTA"
+            @click.native="$emit('close')"
+          >
+            Call us
+          </BaseButton>
         </div>
         <div class="HeaderMenuMobile__lastCol">
           <Icon name="exit" @click.native="$emit('close')" />

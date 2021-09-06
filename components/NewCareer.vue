@@ -1,29 +1,29 @@
 <template>
-  <Container id="form" tag="section" class="LetsGetInTouch">
-    <GradientBorder class="LetsGetInTouch__container">
-      <h3 class="LetsGetInTouch__title">
+  <Container id="form" tag="section" class="NewCareer">
+    <GradientBorder class="NewCareer__container">
+      <h3 class="NewCareer__title">
         {{ $t('forms.title1') }}
         <br />
         {{ $t('forms.title2') }}
         <br />
-        {{ $t('forms.title3') }}
+        {{ $t('forms.title4') }}
       </h3>
       <LetsGetInTouchSteps :steps="steps" />
-      <LetsGetInTouchForm />
+      <NewCareerForm />
     </GradientBorder>
   </Container>
 </template>
 
 <script>
 export default {
-  name: 'LetsGetInTouch',
+  name: 'NewCareer',
   computed: {
     steps() {
       return [
-        this.$t('forms.letsGetInTouch.step1'),
-        this.$t('forms.letsGetInTouch.step2'),
-        this.$t('forms.letsGetInTouch.step3'),
-        this.$t('forms.letsGetInTouch.step4'),
+        this.$t('forms.newCareer.step1'),
+        this.$t('forms.newCareer.step2'),
+        this.$t('forms.newCareer.step3'),
+        this.$t('forms.newCareer.step4'),
       ]
     },
   },
@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style lang="scss">
-.LetsGetInTouch {
+.NewCareer {
   &__container {
     padding: 24px 12px 30px;
 

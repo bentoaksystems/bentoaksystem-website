@@ -65,13 +65,4 @@ export default {
     name2: 'Some Guy',
     jobTitle2: 'Working at some company',
   },
-  form: {
-    title1: "Let's Get In Touch",
-    title2: '&',
-    title3: 'Hire A Team In 4 Simple Steps',
-    step1: 'Describe Your Project',
-    step2: 'We Contact You To Go Through Details',
-    step3: 'Approve Your Team',
-    step4: 'Launch Your Project',
-  },
 }

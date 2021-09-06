@@ -31,6 +31,7 @@ export default {
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/vuelidate.js',
     '~/plugins/vue-screen.js',
     '~/plugins/dropdownMenu.js',
     '~/plugins/vue-agile.js',
@@ -51,6 +52,7 @@ export default {
     '@nuxt/content',
     '@nuxtjs/style-resources',
     'nuxt-i18n',
+    'vue-scrollto/nuxt',
   ],
 
   i18n: {

@@ -25,7 +25,7 @@
         </ul>
       </div>
     </GradientBorder>
-    <BaseButton class="ManagedTeamAgileTeam__button">{{
+    <BaseButton v-scroll-to="'#form'" class="ManagedTeamAgileTeam__button">{{
       $t('managedTeam.buttonLabel')
     }}</BaseButton>
   </Container>

@@ -21,7 +21,7 @@
         />
         <div class="CareersOpportunityListMobile__groupButtonContainer">
           <BaseButton
-            to="#form"
+            v-scroll-to="'#form'"
             class="CareersOpportunityListMobile__groupButton"
           >
             {{ $t('careers.opportunities.apply') }}

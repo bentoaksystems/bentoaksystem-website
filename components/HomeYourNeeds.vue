@@ -13,7 +13,7 @@
           class="HomeYourNeeds__item"
         />
       </div>
-      <BaseButton class="HomeYourNeeds__CTA" :to="localePath('#callus')">
+      <BaseButton v-scroll-to="'#form'" class="HomeYourNeeds__CTA">
         {{ $t('home.yourNeeds.content.cta') }}
       </BaseButton>
     </div>

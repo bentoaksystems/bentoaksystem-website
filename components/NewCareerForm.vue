@@ -1,50 +1,47 @@
 <template>
-  <form class="LetsGetInTouchForm" @submit.prevent="onSubmit">
-    <div v-show="isDesktop" class="LetsGetInTouchForm__desktopForm">
+  <form class="NewCareerForm" @submit.prevent="onSubmit">
+    <div v-show="isDesktop" class="NewCareerForm__desktopForm">
       <BaseInput
         v-for="input of inputs"
         :key="input.name"
         v-model="form[input.name]"
-        :class="[
-          'LetsGetInTouchForm__input',
-          `LetsGetInTouchForm__input--${input.name}`,
-        ]"
+        :class="['NewCareerForm__input', `NewCareerForm__input--${input.name}`]"
         v-bind="input"
       />
-      <div class="LetsGetInTouchForm__submitBox">
+      <div class="NewCareerForm__submitBox">
         <FormSuccessMessage
           :show="sentSuccessfully"
           :message-main="$t('forms.submitMessage1')"
           :message-sub="$t('forms.submitMessage2')"
         />
-        <BaseButton class="LetsGetInTouchForm__submitBtn">
-          {{ $t('forms.send') }}
+        <BaseButton class="NewCareerForm__submitBtn">
+          {{ $t('forms.sendRequest') }}
         </BaseButton>
       </div>
     </div>
-    <div v-show="!isDesktop" class="LetsGetInTouchForm__mobileForm">
+    <div v-show="!isDesktop" class="NewCareerForm__mobileForm">
       <agile v-bind="carouselOptions" ref="formCarousel">
         <div
           v-for="(slide, index) of mobileInputs"
           :key="index"
-          class="LetsGetInTouchForm__slide"
+          class="NewCareerForm__slide"
         >
           <BaseInput
             v-for="input of slide"
             :key="input.name"
             v-model="form[input.name]"
             :class="[
-              'LetsGetInTouchForm__input',
-              `LetsGetInTouchForm__input--${input.name}`,
+              'NewCareerForm__input',
+              `NewCareerForm__input--${input.name}`,
             ]"
             v-bind="input"
           />
           <div
             v-if="index < mobileInputs.length - 1"
-            class="LetsGetInTouchForm__nextBtnBox"
+            class="NewCareerForm__nextBtnBox"
           >
             <BaseButton
-              class="LetsGetInTouchForm__nextBtn"
+              class="NewCareerForm__nextBtn"
               type="button"
               @click="$refs.formCarousel.goToNext()"
             >
@@ -53,15 +50,15 @@
           </div>
           <div
             v-if="index === mobileInputs.length - 1"
-            class="LetsGetInTouchForm__submitBox"
+            class="NewCareerForm__submitBox"
           >
             <FormSuccessMessage
               :show="sentSuccessfully"
               :message-main="$t('forms.submitMessage1')"
               :message-sub="$t('forms.submitMessage2')"
             />
-            <BaseButton class="LetsGetInTouchForm__submitBtn">
-              {{ $t('forms.send') }}
+            <BaseButton class="NewCareerForm__submitBtn">
+              {{ $t('forms.sendRequest') }}
             </BaseButton>
           </div>
         </div>
@@ -74,7 +71,7 @@
 import { required, email } from 'vuelidate/lib/validators'
 
 export default {
-  name: 'LetsGetInTouchForm',
+  name: 'NewCareerForm',
   data() {
     return {
       form: {
@@ -82,10 +79,8 @@ export default {
         surname: '',
         email: '',
         phone: '',
-        company: '',
-        role: '',
-        interests: '',
-        inquiry: '',
+        specialty: '',
+        files: [],
       },
       sentSuccessfully: false,
     }
@@ -118,28 +113,14 @@ export default {
           true
         ),
         this.makeInputObj('phone', 'text', this.$t('forms.phone')),
-        this.makeInputObj('company', 'text', this.$t('forms.company')),
-        this.makeInputObj('role', 'text', this.$t('forms.role')),
-        this.makeInputObj('interests', 'text', this.$t('forms.interests')),
-        this.makeInputObj(
-          'inquiry',
-          'textarea',
-          this.$t('forms.inquiry'),
-          this.$v.form.inquiry.$anyError,
-          this.$t('forms.errors.required'),
-          true
-        ),
+        this.makeInputObj('specialty', 'text', this.$t('forms.specialty')),
+        this.makeInputObj('files', 'file', this.$t('forms.files')),
       ]
     },
     mobileInputs() {
-      const [fname, surname, email, phone, company, role, interests, inquiry] =
-        this.inputs
+      const [fname, surname, email, phone, specialty, files] = this.inputs
 
-      return [
-        [fname, surname, email],
-        [phone, company, role, interests],
-        [inquiry],
-      ]
+      return [[fname, surname, email], [phone, specialty], [files]]
     },
     isDesktop() {
       return this.$screen.md
@@ -161,15 +142,14 @@ export default {
       fname: { required },
       surname: { required },
       email: { required, email },
-      inquiry: { required },
     },
   },
   methods: {
     onSubmit() {
-      // ToDo connect to api / add submit validation
       this.$v.$touch()
       if (this.$v.$invalid) return
 
+      // ToDo connect to api
       this.sentSuccessfully = true
       setTimeout(() => {
         this.sentSuccessfully = false
@@ -190,7 +170,7 @@ export default {
 </script>
 
 <style lang="scss">
-.LetsGetInTouchForm {
+.NewCareerForm {
   &__desktopForm {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
@@ -217,7 +197,7 @@ export default {
   }
 
   &__input {
-    &--inquiry {
+    &--files {
       grid-row-end: span 2;
     }
   }

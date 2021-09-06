@@ -9,7 +9,7 @@
             {{ $t('readmore') }}
           </NuxtLink>
         </div>
-        <BaseButton class="HomeHero__cta">
+        <BaseButton v-scroll-to="'#form'" class="HomeHero__cta">
           {{ $t('home.cta') }}
         </BaseButton>
       </div>

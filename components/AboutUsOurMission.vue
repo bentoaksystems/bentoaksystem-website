@@ -37,7 +37,7 @@ export default {
           'Modules',
           'aboutUs.missions.text3',
           'aboutUs.missions.urlLabel3',
-          '/',
+          '/services',
           require('~/assets/images/aboutUs/aboutUsMissionsModule.svg')
         ),
       ]

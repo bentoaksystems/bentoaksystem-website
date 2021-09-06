@@ -12,7 +12,10 @@
         :light="!Boolean((index + 2) % 3)"
       />
     </div>
-    <BaseButton to="#form" class="CareersOpportunityListDesktop__button">
+    <BaseButton
+      v-scroll-to="'#form'"
+      class="CareersOpportunityListDesktop__button"
+    >
       {{ $t('careers.opportunities.apply') }}
     </BaseButton>
   </div>
