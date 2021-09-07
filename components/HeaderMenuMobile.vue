@@ -3,7 +3,7 @@
     <GradientBorder class="HeaderMenuMobile__gradientBorder">
       <div class="HeaderMenuMobile__mainContainer">
         <div>
-          <SwitchLocale />
+          <!-- <SwitchLocale /> -->
         </div>
         <div class="HeaderMenuMobile__midCol">
           <Navigation

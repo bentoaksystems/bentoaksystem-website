@@ -62,21 +62,21 @@ export default {
         name: 'English',
         icon: 'english',
       },
-      {
-        code: 'de',
-        name: 'Deutsche',
-        icon: 'german',
-      },
-      {
-        code: 'fr',
-        name: 'Français',
-        icon: 'french',
-      },
-      {
-        code: 'es',
-        name: 'Español',
-        icon: 'spanish',
-      },
+      // {
+      //   code: 'de',
+      //   name: 'Deutsche',
+      //   icon: 'german',
+      // },
+      // {
+      //   code: 'fr',
+      //   name: 'Français',
+      //   icon: 'french',
+      // },
+      // {
+      //   code: 'es',
+      //   name: 'Español',
+      //   icon: 'spanish',
+      // },
     ],
     defaultLocale: 'en',
     strategy: 'prefix_and_default',
