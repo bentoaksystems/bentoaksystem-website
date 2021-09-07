@@ -5,7 +5,7 @@
     <HomeHowWeHelp />
     <HomeYourNeeds />
     <HomeWhyUs />
-    <HomeTestimonials class="HomePage__testimonials" />
+    <!-- <HomeTestimonials class="HomePage__testimonials" /> -->
     <LetsGetInTouch class="HomePage__letsGetInTouch" />
   </main>
 </template>
