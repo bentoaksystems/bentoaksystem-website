@@ -43,6 +43,10 @@ export default {
           icon: 'phone',
         },
         {
+          text: '+442081442031',
+          icon: 'whatsapp',
+        },
+        {
           text: '20-22 Wenlock Road, London, N1 7GU',
           icon: 'pin',
         },
