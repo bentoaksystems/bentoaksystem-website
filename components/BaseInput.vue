@@ -137,13 +137,13 @@ export default {
     height: 4px;
     width: 100%;
     z-index: -1;
-    box-shadow: $inputBoxShadow;
     transform-origin: center;
     transform: translateY(10px);
     transition: transform 200ms ease-in-out;
 
     input:focus + * > &,
     textarea:focus + * > & {
+      box-shadow: $inputBoxShadow;
       transform: translateY(12px) scaleY(6);
     }
   }
