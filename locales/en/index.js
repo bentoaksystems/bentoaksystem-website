@@ -22,6 +22,7 @@ export default {
     planning: 'Product planning',
   },
   readmore: 'Read more',
+  callUs: 'Call us',
   home,
   aboutUs,
   services,

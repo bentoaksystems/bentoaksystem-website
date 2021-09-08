@@ -13,9 +13,7 @@
     />
     <Navigation v-show="$screen.md" />
     <!-- <SwitchLocale v-show="$screen.md" class="Header__switchLocale" /> -->
-    <BaseButton v-show="$screen.md" v-scroll-to="'#form'" class="Header__CTA">
-      Call us
-    </BaseButton>
+    <ButtonCallUs v-show="$screen.md" class="Header__CTA" />
   </Container>
 </template>
 
