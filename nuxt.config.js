@@ -35,6 +35,7 @@ export default {
     '~/plugins/vue-screen.js',
     '~/plugins/dropdownMenu.js',
     '~/plugins/vue-agile.js',
+    '~/plugins/firebase-plugin.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
