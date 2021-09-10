@@ -72,7 +72,7 @@
 
 <script>
 import { required, email } from 'vuelidate/lib/validators'
-
+import { db } from '~/firestore-service'
 export default {
   name: 'LetsGetInTouchForm',
   data() {
@@ -170,10 +170,18 @@ export default {
       this.$v.$touch()
       if (this.$v.$invalid) return
 
-      this.sentSuccessfully = true
-      setTimeout(() => {
-        this.sentSuccessfully = false
-      }, 3000)
+      db.collection('inquiry')
+        .add(this.$v.form.$model)
+        .then(() => (this.sentSuccessfully = true))
+        .catch((e) => {
+          console.error(e)
+          this.sentSuccessfully = false
+        })
+        .finally(() => {
+          setTimeout(() => {
+            this.sentSuccessfully = false
+          }, 3000)
+        })
     },
     makeInputObj(name, type, label, invalid, message, required) {
       return {

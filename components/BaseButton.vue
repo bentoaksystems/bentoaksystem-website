@@ -2,6 +2,7 @@
   <component
     :is="tag"
     :to="to"
+    :href="href"
     :disabled="disabled"
     class="BaseButton"
     @click="onEvent"
@@ -30,6 +31,9 @@ export default {
   computed: {
     tag() {
       return this.to ? (this.externalLink ? 'a' : 'NuxtLink') : 'button'
+    },
+    href() {
+      return this.externalLink && this.to
     },
   },
   methods: {

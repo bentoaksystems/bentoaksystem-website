@@ -1,5 +1,14 @@
 # bos-website
+## Firebase Setup
 
+$ yarn add global firebase-tools
+
+or if you need permissions:
+$ sudo yarn add global firebase-tool
+
+then in the project folder:
+$ firebase login
+ 
 ## Build Setup
 
 ```bash

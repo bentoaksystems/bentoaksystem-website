@@ -3,20 +3,17 @@
     <GradientBorder class="HeaderMenuMobile__gradientBorder">
       <div class="HeaderMenuMobile__mainContainer">
         <div>
-          <SwitchLocale />
+          <!-- <SwitchLocale /> -->
         </div>
         <div class="HeaderMenuMobile__midCol">
           <Navigation
             variant="headerMenuMobile"
             class="HeaderMenuMobile__navList"
           />
-          <BaseButton
-            v-scroll-to="'#form'"
+          <ButtonCallUs
             class="HeaderMenuMobile__CTA"
             @click.native="$emit('close')"
-          >
-            Call us
-          </BaseButton>
+          />
         </div>
         <div class="HeaderMenuMobile__lastCol">
           <Icon name="exit" @click.native="$emit('close')" />

@@ -35,6 +35,7 @@ export default {
     '~/plugins/vue-screen.js',
     '~/plugins/dropdownMenu.js',
     '~/plugins/vue-agile.js',
+    '~/plugins/firebase-plugin.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -62,21 +63,21 @@ export default {
         name: 'English',
         icon: 'english',
       },
-      {
-        code: 'de',
-        name: 'Deutsche',
-        icon: 'german',
-      },
-      {
-        code: 'fr',
-        name: 'Français',
-        icon: 'french',
-      },
-      {
-        code: 'es',
-        name: 'Español',
-        icon: 'spanish',
-      },
+      // {
+      //   code: 'de',
+      //   name: 'Deutsche',
+      //   icon: 'german',
+      // },
+      // {
+      //   code: 'fr',
+      //   name: 'Français',
+      //   icon: 'french',
+      // },
+      // {
+      //   code: 'es',
+      //   name: 'Español',
+      //   icon: 'spanish',
+      // },
     ],
     defaultLocale: 'en',
     strategy: 'prefix_and_default',
