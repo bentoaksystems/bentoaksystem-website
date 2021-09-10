@@ -72,24 +72,7 @@
 
 <script>
 import { required, email } from 'vuelidate/lib/validators'
-import firebase from 'firebase/compat/app'
-import 'firebase/compat/firestore'
-const firebaseConfig = {
-  apiKey: 'AIzaSyCgEznAgq9aklfAMC43jHu4riVuTXIXSJQ',
-  authDomain: 'test-project-3c1dd.firebaseapp.com',
-  databaseURL: 'https://test-project-3c1dd.firebaseio.com',
-  projectId: 'test-project-3c1dd',
-  storageBucket: 'test-project-3c1dd.appspot.com',
-  messagingSenderId: '986034417692',
-  appId: '1:986034417692:web:a403d92d5e06537753afd9',
-  measurementId: 'G-VZHJLWHX4B',
-}
-export const db = firebase.initializeyApp(firebaseConfig).firestore()
-
-// Export types that exists in Firestore
-// This is not always necessary, but it's used in other examples
-const { Timestamp} = firebase.firestore
-
+import { db } from '~/firestore-service'
 export default {
   name: 'LetsGetInTouchForm',
   data() {
@@ -186,19 +169,19 @@ export default {
       // ToDo connect to api / add submit validation
       this.$v.$touch()
       if (this.$v.$invalid) return
-      console.log({db, Timestamp})
-      // db.collection('inquiry')
-      //   .add({ key: 'value' })
-      //   .then(() => (this.sentSuccessfully = true))
-      //   .catch((e) => {
-      //     console.error(e)
-      //     this.sentSuccessfully = false
-      //   })
-      //   .finally(() => {
-      //     setTimeout(() => {
-      //       this.sentSuccessfully = false
-      //     }, 3000)
-      //   })
+
+      db.collection('inquiry')
+        .add(this.$v.form.$model)
+        .then(() => (this.sentSuccessfully = true))
+        .catch((e) => {
+          console.error(e)
+          this.sentSuccessfully = false
+        })
+        .finally(() => {
+          setTimeout(() => {
+            this.sentSuccessfully = false
+          }, 3000)
+        })
     },
     makeInputObj(name, type, label, invalid, message, required) {
       return {
