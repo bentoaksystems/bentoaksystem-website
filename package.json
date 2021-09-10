@@ -13,8 +13,7 @@
   "dependencies": {
     "@nuxt/content": "^1.14.0",
     "core-js": "^3.9.1",
-    "firebase": "^9.0.1",
-    "firebase-tools": "^9.18.0",
+    "firebase": "8.10.0",
     "global": "^4.4.0",
     "nuxt": "^2.15.3",
     "nuxt-i18n": "^6.27.0",

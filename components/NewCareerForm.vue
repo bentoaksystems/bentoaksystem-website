@@ -69,6 +69,7 @@
 
 <script>
 import { required, email } from 'vuelidate/lib/validators'
+import { db, fileStorage, TaskState, Timestamp } from '~/firestore-service'
 
 export default {
   name: 'NewCareerForm',
@@ -148,12 +149,35 @@ export default {
     onSubmit() {
       this.$v.$touch()
       if (this.$v.$invalid) return
-
-      // ToDo connect to api
-      this.sentSuccessfully = true
-      setTimeout(() => {
-        this.sentSuccessfully = false
-      }, 3000)
+      const formData = this.$v.form.$model
+      const files = formData.files
+      delete formData.files
+      console.log(formData, files)
+      // ToDo connect to ap
+      const resumeRef = db.collection('resume').doc()
+      resumeRef
+        .set(formData)
+        .then(() => {
+          if (files.length) {
+            const upload = fileStorage
+              .ref(formData.fname + '_' + formData.surname + '_' +  (Timestamp.now().toMillis()))
+              .put(files[0])
+            upload.on(TaskState.STATE_CHANGED,
+              (snapshot => {
+              let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+              console.log('Upload is ' + progress + '% done');
+            }),
+              (err) => console.error(err),
+              async () => await resumeRef.update({ path: await upload.snapshot.ref.getDownloadURL() })
+            )
+          }
+        })
+        .catch((e) => console.error(e))
+        .finally(() => {
+          setTimeout(() => {
+            this.sentSuccessfully = false
+          }, 3000)
+        })
     },
     makeInputObj(name, type, label, invalid, message, required) {
       return {
