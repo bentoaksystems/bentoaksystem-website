@@ -61,5 +61,10 @@ export default {
     rgba(0, 65, 160, 0.8) 84.34%
   );
   cursor: pointer;
+
+  &:disabled {
+    user-select: none;
+    opacity: 0.8;
+  }
 }
 </style>
