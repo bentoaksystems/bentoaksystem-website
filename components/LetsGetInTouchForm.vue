@@ -17,7 +17,7 @@
           :message-main="$t('forms.submitMessage1')"
           :message-sub="$t('forms.submitMessage2')"
         />
-        <BaseButton class="LetsGetInTouchForm__submitBtn">
+        <BaseButton class="LetsGetInTouchForm__submitBtn" :disabled="apiAtWork">
           {{ $t('forms.send') }}
         </BaseButton>
       </div>
@@ -60,7 +60,10 @@
               :message-main="$t('forms.submitMessage1')"
               :message-sub="$t('forms.submitMessage2')"
             />
-            <BaseButton class="LetsGetInTouchForm__submitBtn">
+            <BaseButton
+              class="LetsGetInTouchForm__submitBtn"
+              :disabled="apiAtWork"
+            >
               {{ $t('forms.send') }}
             </BaseButton>
           </div>
@@ -88,6 +91,7 @@ export default {
         inquiry: '',
       },
       sentSuccessfully: false,
+      apiAtWork: false,
     }
   },
   computed: {

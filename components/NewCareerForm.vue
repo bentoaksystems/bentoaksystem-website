@@ -14,7 +14,7 @@
           :message-main="$t('forms.submitMessage1')"
           :message-sub="$t('forms.submitMessage2')"
         />
-        <BaseButton class="NewCareerForm__submitBtn">
+        <BaseButton class="NewCareerForm__submitBtn" :disabled="apiAtWork">
           {{ $t('forms.sendRequest') }}
         </BaseButton>
       </div>
@@ -57,7 +57,7 @@
               :message-main="$t('forms.submitMessage1')"
               :message-sub="$t('forms.submitMessage2')"
             />
-            <BaseButton class="NewCareerForm__submitBtn">
+            <BaseButton class="NewCareerForm__submitBtn" :disabled="apiAtWork">
               {{ $t('forms.sendRequest') }}
             </BaseButton>
           </div>
@@ -83,6 +83,7 @@ export default {
         files: [],
       },
       sentSuccessfully: false,
+      apiAtWork: false,
     }
   },
   computed: {
