@@ -2,56 +2,56 @@
   <form class="SomethingElseForm" @submit.prevent="onSubmit">
     <div v-show="isDesktop" class="SomethingElseForm__desktopForm">
       <BaseInput
-        v-model="fname"
+        v-model="form.fname"
         class="SomethingElseForm__input"
         type="text"
         name="fname"
         :label="$t('forms.fname')"
-        :invalid="$v.fname.$anyError"
+        :invalid="$v.form.fname.$anyError"
         :message="$t('forms.errors.required')"
         required
       />
       <BaseInput
-        v-model="surname"
+        v-model="form.surname"
         class="SomethingElseForm__input"
         type="text"
         name="surname"
         :label="$t('forms.surname')"
-        :invalid="$v.surname.$anyError"
+        :invalid="$v.form.surname.$anyError"
         :message="$t('forms.errors.required')"
         required
       />
       <BaseInput
-        v-model="email"
+        v-model="form.email"
         class="SomethingElseForm__input"
         type="email"
         :label="$t('forms.email')"
-        :invalid="$v.email.$anyError"
+        :invalid="$v.form.email.$anyError"
         :message="emailErrorMessage"
         name="email"
         required
       />
       <BaseInput
-        v-model="phone"
+        v-model="form.phone"
         class="SomethingElseForm__input"
         type="text"
         name="phone"
         :label="$t('forms.phone')"
       />
       <BaseInput
-        v-model="regarding"
+        v-model="form.regarding"
         class="SomethingElseForm__input"
         type="text"
         name="regarding"
         :label="$t('forms.regarding')"
       />
       <BaseInput
-        v-model="inquiry"
+        v-model="form.inquiry"
         class="SomethingElseForm__input SomethingElseForm__input--inquiry"
         type="textarea"
         name="inquiry"
         :label="$t('forms.inquiry')"
-        :invalid="$v.inquiry.$anyError"
+        :invalid="$v.form.inquiry.$anyError"
         :message="$t('forms.errors.required')"
         required
       />
@@ -61,7 +61,7 @@
           :message-main="$t('forms.submitMessage1')"
           :message-sub="$t('forms.submitMessage2')"
         />
-        <BaseButton class="SomethingElseForm__submitBtn">
+        <BaseButton class="SomethingElseForm__submitBtn" :disabled="apiAtWork">
           {{ $t('forms.send') }}
         </BaseButton>
       </div>
@@ -104,7 +104,10 @@
               :message-main="$t('forms.submitMessage1')"
               :message-sub="$t('forms.submitMessage2')"
             />
-            <BaseButton class="SomethingElseForm__submitBtn">
+            <BaseButton
+              class="SomethingElseForm__submitBtn"
+              :disabled="apiAtWork"
+            >
               {{ $t('forms.send') }}
             </BaseButton>
           </div>
@@ -129,13 +132,8 @@ export default {
         regarding: '',
         inquiry: '',
       },
-      fname: '',
-      surname: '',
-      email: '',
-      phone: '',
-      regarding: '',
-      inquiry: '',
       sentSuccessfully: false,
+      apiAtWork: false,
     }
   },
   computed: {
@@ -204,10 +202,6 @@ export default {
       email: { required, email },
       inquiry: { required },
     },
-    fname: { required },
-    surname: { required },
-    email: { required, email },
-    inquiry: { required },
   },
   methods: {
     onSubmit() {
