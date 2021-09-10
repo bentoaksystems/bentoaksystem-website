@@ -10,13 +10,16 @@
           class="Footer__contactItem"
         >
           <Icon :name="item.icon" class="Footer__contactItemIcon" />
-          <p>{{ item.text }}</p>
+          <p v-if="!item.hyperlink">{{ item.text }}</p>
+          <p v-if="item.hyperlink" class="Footer__hyperlink">
+            <a :href="item.hyperlink">{{ item.text }}</a>
+          </p>
         </div>
       </div>
       <div class="Footer__socialAndRights">
         <div />
         <p class="Footer__rights">
-          © 2021 BENT OAKS SYSTEMS. All rights reserved
+          © 2021 BENT OAK SYSTEMS LTD. All rights reserved
         </p>
         <div class="Footer__socialMediaLinkList">
           <a
@@ -39,15 +42,18 @@ export default {
     contactInfo() {
       return [
         {
-          text: '+447782827075',
+          text: '+44 20 81442031',
           icon: 'phone',
+          hyperlink: 'tel:+442081442031',
         },
         {
-          text: '+442081442031',
+          text: '+44 778282 7075',
           icon: 'whatsapp',
+          hyperlink:
+            'https://wa.me/447782827075?text=I%20want%20to%20build%20a%20team',
         },
         {
-          text: '20-22 Wenlock Road, London, N1 7GU',
+          text: '20-22 Wenlock Road, London, N1 7GU, United Kingdomَ',
           icon: 'pin',
         },
       ]
@@ -96,6 +102,10 @@ export default {
     align-items: center;
   }
 
+  &__hyperlink {
+    text-decoration: underline;
+    cursor: pointer;
+  }
   &__logo {
     margin-bottom: 28px;
   }

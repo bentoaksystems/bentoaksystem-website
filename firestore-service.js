@@ -1,5 +1,7 @@
 import firebase from 'firebase/compat/app'
 import 'firebase/compat/firestore'
+import 'firebase/compat/storage'
+
 const firebaseConfig = {
   apiKey: 'AIzaSyCgEznAgq9aklfAMC43jHu4riVuTXIXSJQ',
   authDomain: 'test-project-3c1dd.firebaseapp.com',
@@ -11,7 +13,8 @@ const firebaseConfig = {
   measurementId: 'G-VZHJLWHX4B',
 }
 export const db = firebase.initializeApp(firebaseConfig).firestore()
-
+export const fileStorage = firebase.storage()
+export const TaskState = firebase.storage.TaskState
 // Export types that exists in Firestore
 // This is not always necessary, but it's used in other examples
 const { Timestamp, GeoPoint } = firebase.firestore

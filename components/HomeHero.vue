@@ -29,13 +29,13 @@ export default {
   padding-bottom: 32px;
 
   @include addSpecificity {
-    margin: 0 -2px;
+    margin: 0;
     border-radius: 0;
     background-image: url('~/assets/images/home/bgHomepage.png');
     background-size: cover;
 
     @include respondTo(md) {
-      margin: 0;
+      margin: 1vw;
       border-radius: 32px;
     }
   }
