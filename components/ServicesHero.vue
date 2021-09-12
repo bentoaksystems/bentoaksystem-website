@@ -27,7 +27,7 @@ export default {
   padding-bottom: 24px;
 
   @include addSpecificity {
-    margin: 0 -2px;
+    margin: 0;
     border-radius: 0;
     background-image: url('~/assets/images/home/bgHomepage.png');
     background-size: cover;
@@ -58,7 +58,7 @@ export default {
     padding-bottom: 74px;
 
     @include addSpecificity {
-      margin: 0;
+      margin: 1vw;
       border-radius: 32px;
     }
 

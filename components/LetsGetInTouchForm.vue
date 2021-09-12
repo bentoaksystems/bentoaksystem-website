@@ -75,7 +75,7 @@
 
 <script>
 import { required, email } from 'vuelidate/lib/validators'
-import { db } from '~/firestore-service'
+import { db, timestamped } from "~/firestore-service";
 export default {
   name: 'LetsGetInTouchForm',
   data() {
@@ -175,7 +175,7 @@ export default {
       if (this.$v.$invalid) return
 
       db.collection('inquiry')
-        .add(this.$v.form.$model)
+        .add(timestamped(this.$v.form.$model))
         .then(() => (this.sentSuccessfully = true))
         .catch((e) => {
           console.error(e)

@@ -69,7 +69,7 @@
 
 <script>
 import { required, email } from 'vuelidate/lib/validators'
-import { db, fileStorage, TaskState, Timestamp } from '~/firestore-service'
+import { db, fileStorage, TaskState, Timestamp, timestamped } from "~/firestore-service";
 
 export default {
   name: 'NewCareerForm',
@@ -153,11 +153,9 @@ export default {
       const formData = this.$v.form.$model
       const files = formData.files
       delete formData.files
-      console.log(formData, files)
-      // ToDo connect to ap
       const resumeRef = db.collection('resume').doc()
       resumeRef
-        .set(formData)
+        .set(timestamped(formData))
         .then(() => {
           if (files.length) {
             const upload = fileStorage
