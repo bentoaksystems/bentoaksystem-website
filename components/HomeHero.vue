@@ -27,6 +27,7 @@ export default {
 .HomeHero {
   padding-top: var(--headerHeight);
   padding-bottom: 32px;
+  max-width: calc(min(#{$maxWidth}, 100vw) - 2vw);
 
   @include addSpecificity {
     margin: 0;
@@ -35,7 +36,7 @@ export default {
     background-size: cover;
 
     @include respondTo(md) {
-      margin: 1vw;
+      margin: 1vw auto;
       border-radius: 32px;
     }
   }

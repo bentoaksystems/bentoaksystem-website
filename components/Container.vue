@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss">
 .Container {
-  max-width: 1140px;
+  max-width: $maxWidth;
   padding-right: $sidePadding;
   padding-left: $sidePadding;
   margin-right: auto;

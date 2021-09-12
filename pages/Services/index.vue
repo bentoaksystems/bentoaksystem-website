@@ -14,9 +14,6 @@ export default {
 
 <style lang="scss">
 .Services {
-  @include addSpecificity {
-    padding: 0;
-  }
 
   &__form {
     margin-bottom: 32px;

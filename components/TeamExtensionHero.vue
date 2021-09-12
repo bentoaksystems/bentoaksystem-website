@@ -60,6 +60,7 @@ export default {
   &__price {
     display: block;
     margin-top: 24px;
+    line-height: 1.2;
     @include gradientText($gradient5);
   }
 

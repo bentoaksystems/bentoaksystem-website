@@ -95,6 +95,8 @@ export default {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  max-width: $maxWidth;
+  margin: 0 auto;
 
   &__container {
     display: flex;

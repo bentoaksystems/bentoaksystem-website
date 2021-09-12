@@ -15,14 +15,13 @@ export default {
 
 <style lang="scss">
 .CareersHero {
+  max-width: calc(min(#{$maxWidth}, 100vw) - 2vw);
   padding-top: var(--headerHeight);
   padding-bottom: 24px;
 
   @include addSpecificity {
-    margin: 0;
+    margin: 1vw auto;
     border-radius: 0;
-    background-image: url('~/assets/images/home/bgHomepage.png');
-    background-size: cover;
   }
 
   &__container {
@@ -50,7 +49,7 @@ export default {
     padding-bottom: 74px;
 
     @include addSpecificity {
-      margin: 1vw;
+      margin: 1vw auto;
       border-radius: 32px;
     }
 
