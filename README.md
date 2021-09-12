@@ -1,14 +1,15 @@
 # bos-website
 ## Firebase Setup
-
+```bash
+# install firebase
 $ yarn add global firebase-tools
 
-or if you need permissions:
+# or if you need permissions:
 $ sudo yarn add global firebase-tool
 
-then in the project folder:
+# then in the project folder:
 $ firebase login
- 
+``` 
 ## Build Setup
 
 ```bash
@@ -23,7 +24,12 @@ $ yarn build
 $ yarn start
 
 # generate static project
-$ yarn generate
+$ yarn generate # creates files in the 'dist' directory
+```
+# to deploy
+```bash
+# After generating static project ('dist' directory)
+$ fireabse deploy --only hosting
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

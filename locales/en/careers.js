@@ -21,47 +21,26 @@ export default {
   },
   positions: {
     front: {
-      title: 'Front End Developer',
-      item1: 'Familiar with module bundles: Web pack, Parcel.',
-      item2: 'Experience with JS testing frameworks',
+      type: 'web',
+      title: 'Frontend Developer',
+      item1: 'Angular, React or Vue.js',
+      item2: 'Great HTML and CSS skills',
     },
-    reactJunior: {
-      title: 'Junior React Developer',
-      item1:
-        'Experience with JavaScript (ES6), CSS (Sass/Less) and semantic HTML5',
-    },
-    iosMiddle: {
-      title: 'Middle iOS Developer',
-      item1: 'Strong knowledge of Swift',
-      item2: 'Experience with various formats JSON/XML',
-    },
-    kafkaDev: {
-      title: 'Senior Kafka Developer',
-      item1: 'Experience with Distributed systems',
-      item2: 'Bachelor degree in Computer Science or equal',
-    },
-    fullStack: {
-      title: 'Full Stack Developer',
-      item1: 'Experience with using Git',
-      item2: 'Experience with using databases like MongoDB, MySQL, Redis',
+    python: {
+      type: 'python',
+      title: 'Junior Python Developer',
+      item1: 'Software engineering with OOP',
+      item2: 'Familiar with unit testing and TDD',
     },
     QC: {
-      title: 'Software Tester (QC)',
+      type: 'qc',
+      title: 'Software Tester (QA)',
       item1: 'Min 1 year of experience',
       item2: 'IT or Computer graduate',
     },
-    pythonDev: {
-      title: 'Senior Python Developer',
-      item1: '5+ years of experience',
-      item2: 'Experience with BASH scripting',
-    },
-    GoDev: {
-      title: 'Senior Golang Developer',
-      item1: 'Familiarity with REST API design and development',
-      item2: 'Experience as a Back-end developer',
-    },
     UiUx: {
-      title: 'Middle UI/UX Designer',
+      type: 'uiux',
+      title: 'Mid-level UI/UX Designer',
       item1: 'Experience, with B2B products',
       item2: 'Proficiency in responsive web design',
     },

@@ -139,6 +139,7 @@ $sidePadding: 32px;
 
   &__link {
     @include fontSize(12px);
+    font-weight: 600;
     padding-left: $sidePadding;
     text-decoration: underline;
   }

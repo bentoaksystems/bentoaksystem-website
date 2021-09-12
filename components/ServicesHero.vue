@@ -25,6 +25,7 @@ export default {
 .ServicesHero {
   padding-top: var(--headerHeight);
   padding-bottom: 24px;
+  max-width: $maxWidth;
 
   @include addSpecificity {
     margin: 0;
@@ -58,7 +59,7 @@ export default {
     padding-bottom: 74px;
 
     @include addSpecificity {
-      margin: 1vw;
+      margin: 1vw auto;
       border-radius: 32px;
     }
 

@@ -40,8 +40,8 @@ export default {
       --headerHeight: 112px;
     }
 
-    margin-top: calc(var(--headerHeight) * -1);
-    padding-top: var(--headerHeight);
+    margin-top: 0;
+    padding-top: calc(var(--headerHeight) + 1vw);
   }
 }
 </style>

@@ -37,6 +37,13 @@ export default {
   display: flex;
   align-items: center;
   padding: 16px 0;
+  z-index: 3;
+  background: white;
+  width: calc(min(#{$maxWidth}, 100vw - 32px));
+  top: 0px;
+  left: calc(max(0px, (100vw - #{$maxWidth} - 32px) / 2));
+  position: fixed;
+  box-shadow: 0px 2px 2px 1px #8888884a;
 
   &__logo {
     margin-right: auto;

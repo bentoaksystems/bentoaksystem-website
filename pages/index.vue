@@ -18,9 +18,6 @@ export default {
 
 <style lang="scss">
 .HomePage {
-  @include addSpecificity {
-    padding: 0;
-  }
 
   &__testimonials {
     margin-top: 64px;

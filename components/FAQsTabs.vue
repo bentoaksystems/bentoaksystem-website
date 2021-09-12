@@ -14,44 +14,26 @@
 </template>
 
 <script>
+import faqs from '@/locales/en/faqs'
+const tabs = ['Clients', 'Devs', 'Work', 'Payment']
+const arrayLength = (tabName) =>
+  faqs['qas' + tabName] ? Object.keys(faqs['qas' + tabName]).length / 2 : 0
 export default {
   name: 'FAQsTabs',
   data() {
     return {
-      tabs: [
+      tabs: tabs.map((tabName, index) =>
         this.makeTabObj(
-          'faqs.tabs.clients',
-          [
-            this.makeQaObj('faqs.qas.q1', 'faqs.qas.a1'),
-            this.makeQaObj('faqs.qas.q2', 'faqs.qas.a2'),
-            this.makeQaObj('faqs.qas.q3', 'faqs.qas.a3'),
-            this.makeQaObj('faqs.qas.q4', 'faqs.qas.a4'),
-            this.makeQaObj('faqs.qas.q5', 'faqs.qas.a5'),
-          ],
-          true
-        ),
-        this.makeTabObj('faqs.tabs.devs', [
-          this.makeQaObj('faqs.qas.q1', 'faqs.qas.a1'),
-          this.makeQaObj('faqs.qas.q2', 'faqs.qas.a2'),
-          this.makeQaObj('faqs.qas.q3', 'faqs.qas.a3'),
-          this.makeQaObj('faqs.qas.q4', 'faqs.qas.a4'),
-          this.makeQaObj('faqs.qas.q5', 'faqs.qas.a5'),
-        ]),
-        this.makeTabObj('faqs.tabs.work', [
-          this.makeQaObj('faqs.qas.q1', 'faqs.qas.a1'),
-          this.makeQaObj('faqs.qas.q2', 'faqs.qas.a2'),
-          this.makeQaObj('faqs.qas.q3', 'faqs.qas.a3'),
-          this.makeQaObj('faqs.qas.q4', 'faqs.qas.a4'),
-          this.makeQaObj('faqs.qas.q5', 'faqs.qas.a5'),
-        ]),
-        this.makeTabObj('faqs.tabs.payment', [
-          this.makeQaObj('faqs.qas.q1', 'faqs.qas.a1'),
-          this.makeQaObj('faqs.qas.q2', 'faqs.qas.a2'),
-          this.makeQaObj('faqs.qas.q3', 'faqs.qas.a3'),
-          this.makeQaObj('faqs.qas.q4', 'faqs.qas.a4'),
-          this.makeQaObj('faqs.qas.q5', 'faqs.qas.a5'),
-        ]),
-      ],
+          'faqs.tabs.' + tabName.toLowerCase(),
+          [...Array(arrayLength(tabName)).keys()].map((i) =>
+            this.makeQaObj(
+              `faqs.qas${tabName}.q` + (i + 1),
+              `faqs.qas${tabName}.a` + (i + 1)
+            )
+          ),
+          !index
+        )
+      ),
     }
   },
   computed: {

@@ -25,10 +25,11 @@
 
 <script>
 export const TYPES = {
-  DEV: 'dev',
+  WEB: 'web',
   IOS: 'ios',
   QC: 'qc',
   UIUX: 'uiux',
+  PYTHON: 'python',
 }
 
 export default {
@@ -64,9 +65,9 @@ export default {
     imgUrl() {
       const { type, light } = this
 
-      if (type === TYPES.DEV && light) {
+      if (type === TYPES.DEV && light || type === TYPES.PYTHON) {
         return require('~/assets/images/careers/devLight.svg')
-      } else if (type === TYPES.DEV) {
+      } else if (type === TYPES.WEB) {
         return require('~/assets/images/careers/dev.svg')
       } else if (type === TYPES.IOS) {
         return require('~/assets/images/careers/ios.svg')

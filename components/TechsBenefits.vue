@@ -9,7 +9,7 @@
         alt="Aws"
         class="TechsBenefits__img"
       />
-      <h4 v-show="!isDesktop" class="TechsBenefits__title">
+      <h4 class="TechsBenefits__title">
         {{ $t('techs.dataEngineering.title') }}
       </h4>
       <VerticalImageList
@@ -41,12 +41,11 @@
         alt="Figma"
         class="TechsBenefits__img"
       />
-      <h4 v-show="!isDesktop" class="TechsBenefits__title">
+      <h4 class="TechsBenefits__title">
         {{ $t('techs.productDesign.title') }}
       </h4>
       <div class="TechsBenefits__productDesignContentList">
         <SimpleUnorderedList
-          v-show="isDesktop"
           :items="productDesignContent1"
           class="TechsBenefits__list"
         />
