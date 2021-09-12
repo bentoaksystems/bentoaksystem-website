@@ -98,6 +98,7 @@ export default {
   }
 
   &__readmore {
+    font-weight: 600;
     position: relative;
     @include fontSize(12px);
     @include gradientText($gradient1);

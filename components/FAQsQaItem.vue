@@ -77,22 +77,11 @@ export default {
   }
 
   &__answer {
-    $paddingLeft: 56px;
-
+    $paddingLeft: 40px;
     position: relative;
-    margin-top: 16px;
+    margin: 16px 0 0 16px;
     padding-left: $paddingLeft;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: $paddingLeft - 16px;
-      display: block;
-      width: 1px;
-      height: 64px;
-      background-color: $faqQuestion;
-    }
+    border-left: 1px $faqQuestion solid;
   }
 }
 </style>

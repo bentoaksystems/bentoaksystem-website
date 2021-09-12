@@ -53,7 +53,7 @@ export default {
             'https://wa.me/447782827075?text=I%20want%20to%20build%20a%20team',
         },
         {
-          text: '20-22 Wenlock Road, London, N1 7GU, United Kingdomَ',
+          text: '20-22 Wenlock Road, London, N1 7GU, United Kingdom',
           icon: 'pin',
         },
       ]
@@ -126,7 +126,7 @@ export default {
   }
 
   &__contactItemIcon {
-    @include square(18px);
+    width: 22px;
     margin-right: 8px;
   }
 

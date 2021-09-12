@@ -155,6 +155,7 @@ export default {
 
   &__input {
     @include fontSize(16px);
+    border-radius: 5px;
     padding: 0 22px;
     height: 60px;
     width: 100%;

@@ -71,7 +71,7 @@ export default {
   &__link {
     @include fontSize(12px);
     display: block;
-    font-weight: 300;
+    font-weight: 600;
     text-decoration: underline;
 
     @include respondTo(md) {

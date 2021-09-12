@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss">
 .GradientBorder {
-  $boderRadius: 4px;
+  $boderRadius: 7px;
   $boderWidth: 2px;
 
   position: relative;
