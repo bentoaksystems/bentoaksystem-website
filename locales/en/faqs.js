@@ -21,7 +21,7 @@ export default {
     q6: 'How do you find the talented developers?',
     a6: 'We are managing developers teams for developing and maintaining our own products. We have a vast network of developers in LinkedIn, and we post ads into the local job advertising websites.',
     q7: 'How much is the cost of hiring developers and creating a team?',
-    a7: 'It depends on the seniority of the team members. It starts from £7 per hour, or £1,000 per month, for a junior developer.',
+    a7: 'It depends on the seniority of the team members. It starts from £7.99d per hour, or £1,000 per month, for a junior developer.',
   },
   qasDevs: {
     q1: 'How can I join?',

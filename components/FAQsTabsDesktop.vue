@@ -46,7 +46,7 @@ export default {
     display: flex;
 
     @include addSpecificity {
-      margin-bottom: 32px 120px;
+      margin: 80px 32px;
     }
   }
 
