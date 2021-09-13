@@ -38,7 +38,7 @@ export default {
   align-items: center;
   padding: 16px 0;
   z-index: 3;
-  background: white;
+  background: #ffffffdd;
   width: calc(min(#{$maxWidth}, 100vw - 32px));
   top: 0px;
   left: calc(max(0px, (100vw - #{$maxWidth} - 32px) / 2));

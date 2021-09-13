@@ -1,6 +1,6 @@
 <template>
-  <BaseButton to="tel:+442081442031" external-link>
-    {{ $t('callUs') }}
+  <BaseButton v-scroll-to="'#form'">
+    {{ $t('contactUs') }}
   </BaseButton>
 </template>
 

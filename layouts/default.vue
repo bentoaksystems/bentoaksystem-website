@@ -33,6 +33,7 @@ export default {
   &__header {
     position: relative;
     z-index: 1;
+    background: #ffffffdd;
   }
 
   &__body {
