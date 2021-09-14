@@ -174,14 +174,19 @@ export default {
       this.$v.$touch()
       if (this.$v.$invalid) return
 
+      this.apiAtWork = true;
       db.collection('inquiry')
         .add(timestamped(this.$v.form.$model))
-        .then(() => (this.sentSuccessfully = true))
+        .then(() => {
+          this.sentSuccessfully = true
+          window.location.href = './ThankYou'
+        })
         .catch((e) => {
           console.error(e)
           this.sentSuccessfully = false
         })
         .finally(() => {
+          this.apiAtWork = false
           setTimeout(() => {
             this.sentSuccessfully = false
           }, 3000)

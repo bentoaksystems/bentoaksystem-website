@@ -210,8 +210,11 @@ export default {
       if (this.$v.$invalid) return
 
       db.collection('faq')
-        .add(timestamped( this.$v.form.$model))
-        .then(() => (this.sentSuccessfully = true))
+        .add(timestamped(this.$v.form.$model))
+        .then(() => {
+          this.sentSuccessfully = true
+          window.location.href = './ThankYou'
+        })
         .catch((e) => {
           console.error(e)
           this.sentSuccessfully = false

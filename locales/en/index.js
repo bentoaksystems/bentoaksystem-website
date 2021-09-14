@@ -8,6 +8,7 @@ import techs from './techs'
 import careers from './careers'
 import faqs from './faqs'
 import forms from './forms'
+import thankYou from './thankYou'
 
 export default {
   navLinks: {
@@ -33,4 +34,5 @@ export default {
   careers,
   faqs,
   forms,
+  thankYou,
 }

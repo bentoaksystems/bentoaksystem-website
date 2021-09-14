@@ -69,7 +69,13 @@
 
 <script>
 import { required, email } from 'vuelidate/lib/validators'
-import { db, fileStorage, TaskState, Timestamp, timestamped } from "~/firestore-service";
+import {
+  db,
+  fileStorage,
+  TaskState,
+  Timestamp,
+  timestamped,
+} from '~/firestore-service'
 
 export default {
   name: 'NewCareerForm',
@@ -153,22 +159,44 @@ export default {
       const formData = this.$v.form.$model
       const files = formData.files
       delete formData.files
+      this.apiAtWork = true
       const resumeRef = db.collection('resume').doc()
       resumeRef
         .set(timestamped(formData))
         .then(() => {
           if (files.length) {
             const upload = fileStorage
-              .ref(formData.fname + '_' + formData.surname + '_' +  (Timestamp.now().toMillis()))
+              .ref(
+                'resumes/' +
+                  formData.fname +
+                  '_' +
+                  formData.surname +
+                  '_' +
+                  Timestamp.now().toMillis()
+              )
               .put(files[0])
-            upload.on(TaskState.STATE_CHANGED,
-              (snapshot => {
-              let progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-              console.log('Upload is ' + progress + '% done');
-            }),
-              (err) => console.error(err),
-              async () => await resumeRef.update({ path: await upload.snapshot.ref.getDownloadURL() })
+            upload.on(
+              TaskState.STATE_CHANGED,
+              (snapshot) => {
+                const progress =
+                  (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+                console.log('Upload is ' + progress + '% done')
+              },
+              (err) => {
+                console.error(err)
+                this.apiAtWork = false
+                window.location.href = './ThankYou'
+              },
+              async () => {
+                await resumeRef.update({
+                  path: await upload.snapshot.ref.getDownloadURL(),
+                })
+                this.apiAtWork = false
+              }
             )
+          } else {
+            this.apiAtWork = false
+            window.location.href = './ThankYou'
           }
         })
         .catch((e) => console.error(e))
