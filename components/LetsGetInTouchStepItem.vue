@@ -75,6 +75,7 @@ $borderWidth: 3px;
   &__text {
     text-align: center;
     @include fontSize(14px);
+    padding: 10px 20px;
 
     &--selected {
       font-weight: 700;

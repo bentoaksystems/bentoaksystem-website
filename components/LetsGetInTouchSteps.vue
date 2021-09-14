@@ -31,7 +31,6 @@ $sidePadding: 12px;
   display: flex;
   margin-bottom: 60px;
   padding-bottom: 12px;
-  gap: $gap;
   margin-left: -($sidePadding);
   margin-right: -($sidePadding);
   padding-left: $sidePadding;
@@ -43,7 +42,9 @@ $sidePadding: 12px;
     flex: 1 100%;
     position: relative;
     display: flex;
+    margin-right: $gap;
     align-items: center;
+    min-width: 130px;
 
     &:nth-of-type(n + 2) {
       &::before {
