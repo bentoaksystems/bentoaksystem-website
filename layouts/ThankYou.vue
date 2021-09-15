@@ -4,12 +4,7 @@
 
 <script>
 export default {
-  name: "ThankYou"
-};
+  name: 'ThankYou',
+}
 </script>
-export default {
-layout: "empty"
-};
-<style>
-
-</style>
+<style></style>

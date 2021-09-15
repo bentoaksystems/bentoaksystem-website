@@ -62,6 +62,7 @@ export default {
     background-size: cover;
     background-position-x: center;
     position: fixed;
+    transform: scaleX(-1);
     top: 80vh;
   }
   &__message {
