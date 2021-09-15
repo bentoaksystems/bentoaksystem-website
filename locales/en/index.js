@@ -8,6 +8,7 @@ import techs from './techs'
 import careers from './careers'
 import faqs from './faqs'
 import forms from './forms'
+import thankYou from './thankYou'
 
 export default {
   navLinks: {
@@ -22,7 +23,7 @@ export default {
     planning: 'Product planning',
   },
   readmore: 'Read more',
-  callUs: 'Call us',
+  contactUs: 'Contact Us',
   home,
   aboutUs,
   services,
@@ -33,4 +34,5 @@ export default {
   careers,
   faqs,
   forms,
+  thankYou,
 }

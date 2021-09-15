@@ -115,7 +115,7 @@ export default {
   &__contactInfo {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     margin-top: 40px;
     width: 100%;
   }

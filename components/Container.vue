@@ -24,5 +24,6 @@ export default {
   margin-right: auto;
   margin-left: auto;
   box-sizing: content-box;
+  border-radius: 0 0 35px 35px;
 }
 </style>

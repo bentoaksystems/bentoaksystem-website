@@ -112,6 +112,7 @@ $sidePadding: 32px;
 
   &__title {
     @include fontSize(20px);
+    text-transform: uppercase;
     margin: 0;
     margin-bottom: 16px;
     padding-left: $sidePadding;

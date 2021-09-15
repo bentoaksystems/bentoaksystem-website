@@ -33,6 +33,7 @@ export default {
   width: $imgWidth;
   min-width: $imgWidth;
   text-align: center;
+  margin: 0 20px;
 
   @include respondTo(md) {
     width: unset;
