@@ -80,6 +80,8 @@ export default {
       text-align: center;
       img {
         display: inline;
+        min-width: 5vh;
+        min-height: 5vh;
       }
     }
     h1 {
