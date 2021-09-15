@@ -12,7 +12,7 @@ import thankYou from './thankYou'
 
 export default {
   navLinks: {
-    home: 'Home',
+    home: 'home',
     aboutUs: 'About us',
     services: 'Services',
     techs: 'Technologies',
