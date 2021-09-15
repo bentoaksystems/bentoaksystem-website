@@ -24,21 +24,21 @@ export default {
           'aboutUs.missions.text1',
           'aboutUs.missions.urlLabel1',
           '/careers',
-          require('~/assets/images/aboutUs/aboutUsMissionsTalents.svg')
+          require('~/assets/images/aboutUs/aboutUsMissionsTalents.jpg')
         ),
         this.makeMissionObj(
           'Techs',
           'aboutUs.missions.text2',
           'aboutUs.missions.urlLabel2',
           '/techs',
-          require('~/assets/images/aboutUs/aboutUsMissionsTechs.svg')
+          require('~/assets/images/aboutUs/aboutUsMissionsTechs.jpg')
         ),
         this.makeMissionObj(
           'Modules',
           'aboutUs.missions.text3',
           'aboutUs.missions.urlLabel3',
           '/services',
-          require('~/assets/images/aboutUs/aboutUsMissionsModule.svg')
+          require('~/assets/images/aboutUs/software quality.jpg')
         ),
       ]
     },

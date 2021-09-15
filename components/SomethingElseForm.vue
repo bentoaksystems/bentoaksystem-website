@@ -99,11 +99,11 @@
             v-if="index === mobileInputs.length - 1"
             class="SomethingElseForm__submitBox"
           >
-            <FormSuccessMessage
-              :show="sentSuccessfully"
-              :message-main="$t('forms.submitMessage1')"
-              :message-sub="$t('forms.submitMessage2')"
-            />
+<!--            <FormSuccessMessage-->
+<!--              :show="sentSuccessfully"-->
+<!--              :message-main="$t('forms.submitMessage1')"-->
+<!--              :message-sub="$t('forms.submitMessage2')"-->
+<!--            />-->
             <BaseButton
               class="SomethingElseForm__submitBtn"
               :disabled="apiAtWork"

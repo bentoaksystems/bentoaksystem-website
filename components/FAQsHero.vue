@@ -2,7 +2,7 @@
   <Container tag="section" class="FAQsHero">
     <div class="FAQsHero__content">
       <img
-        :src="require('~/assets/images/faq/faqsMainArtwork.png')"
+        :src="require('~/assets/images/faq/faqsMainArtwork.jpg')"
         alt="Ask questions"
         class="FAQsHero__img"
       />

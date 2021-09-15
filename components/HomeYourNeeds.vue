@@ -33,7 +33,7 @@ export default {
             'home.yourNeeds.content.extension.items2',
           ],
           null,
-          require('~/assets/images/home/HomeNeedExtension.png')
+          require('~/assets/images/home/HomeNeedExtension.jpg')
         ),
         this.makeNeedObj(
           'home.yourNeeds.content.team.title',
@@ -42,7 +42,7 @@ export default {
             'home.yourNeeds.content.team.items2',
           ],
           null,
-          require('~/assets/images/home/HomeNeedPlanning.png')
+          require('~/assets/images/home/HomeNeedPlanning.jpg')
         ),
         this.makeNeedObj(
           'home.yourNeeds.content.planning.title',
@@ -51,7 +51,7 @@ export default {
             'home.yourNeeds.content.planning.items2',
           ],
           { title: 'See our complete services', url: '/services' },
-          require('~/assets/images/home/HomeNeedRemoteTeam.png')
+          require('~/assets/images/home/HomeNeedRemoteTeam.jpg')
         ),
       ]
     },

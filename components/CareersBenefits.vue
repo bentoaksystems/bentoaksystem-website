@@ -22,7 +22,7 @@ export default {
         this.makeBenefitObj(
           'workflow',
           'careers.benefits.text1',
-          require('~/assets/images/careers/careersWorkflow.png')
+          require('~/assets/images/careers/careersWorkflow.jpg')
         ),
         this.makeBenefitObj(
           'remote',
@@ -32,17 +32,17 @@ export default {
         this.makeBenefitObj(
           'support',
           'careers.benefits.text3',
-          require('~/assets/images/careers/careersSupport.png')
+          require('~/assets/images/careers/careersSupport.jpg')
         ),
         this.makeBenefitObj(
           'salary',
           'careers.benefits.text4',
-          require('~/assets/images/careers/careersSalary.png')
+          require('~/assets/images/careers/careersSalary.jpg')
         ),
         this.makeBenefitObj(
           'learning',
           'careers.benefits.text5',
-          require('~/assets/images/careers/careersLearning.png')
+          require('~/assets/images/careers/careersLearning.jpg')
         ),
       ]
     },

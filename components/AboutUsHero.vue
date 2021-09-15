@@ -3,7 +3,7 @@
     <div class="AboutUsHero__imgContainer">
       <img
         class="AboutUsHero__img"
-        :src="require('~/assets/images/aboutUs/aboutUsMain.svg')"
+        :src="require('~/assets/images/aboutUs/aboutUsMain.jpg')"
         alt="About us"
       />
     </div>

@@ -29,7 +29,7 @@ export default {
           'services.points.text2',
           'services.points.label2',
           '/services/managedteam',
-          require('~/assets/images/services/team.svg')
+          require('~/assets/images/services/team.jpg')
         ),
         this.makePointObj(
           'planning',
