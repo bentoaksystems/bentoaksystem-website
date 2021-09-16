@@ -3,7 +3,7 @@
     <h1 class="PlanningHero__headline">{{ $t('planning.headline') }}</h1>
     <div class="PlanningHero__imgBox">
       <img
-        :src="require('~/assets/images/services/planningHero.jpg')"
+        :src="require('assets/images/services/planningHero.jpg')"
         alt="Managed Team"
       />
     </div>
