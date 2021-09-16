@@ -11,7 +11,9 @@ const firebaseConfig = {
   appId: '1:586449931051:web:629b1d6db8de23fa66d36e',
   measurementId: 'G-47GHGXNEZV'
 }
-export const db = firebase.app().firestore()
+export const db = firebase.apps.length
+  ? firebase.app().firestore()
+  : firebase.initializeApp(firebaseConfig).firestore()
 export const fileStorage = firebase.storage()
 export const TaskState = firebase.storage.TaskState
 export const timestamped = (obj) => ({
