@@ -4,9 +4,9 @@
       {{ $t('techs.headline') }}
     </h1>
     <p class="TechsHero__subhead">
-      <span class="TechsHero__subheadContent">
+      <div class="TechsHero__subheadContent">
         {{ $t('techs.subhead') }}
-      </span>
+      </div>
       <NuxtLink to="/services" class="TechsHero__ourServices">
         {{ $t('techs.ourServices') }}
       </NuxtLink>
