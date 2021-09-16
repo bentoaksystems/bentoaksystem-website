@@ -2,7 +2,7 @@
   <div class="HomeTestimonials">
     <div class="HomeTestimonials__slideBox">
       <img
-        :src="require('~/assets/images/home/HomeTestimonials.png')"
+        :src="require('assets/images/home/homeTestimonial.png')"
         class="HomeTestimonials__img"
       />
       <agile
@@ -24,7 +24,7 @@
     </div>
     <div class="HomeTestimonials__img2Container">
       <img
-        :src="require('~/assets/images/home/HomeTestimonials2.png')"
+        :src="require('assets/images/home/homeTestimonial2.png')"
         class="HomeTestimonials__img"
       />
     </div>
@@ -67,14 +67,14 @@ export default {
           'home.testimonials.text1',
           'home.testimonials.name1',
           'home.testimonials.jobTitle1',
-          require('~/assets/images/home/HomeTestimonialsPerson1.png')
+          require('assets/images/home/homeTestimonialPerson1.png')
         ),
         this.makeSlideObj(
           'home.testimonials.title2',
           'home.testimonials.text2',
           'home.testimonials.name2',
           'home.testimonials.jobTitle2',
-          require('~/assets/images/home/HomeTestimonialsPerson1.png')
+          require('assets/images/home/homeTestimonialPerson1.png')
         ),
       ]
     },
@@ -101,7 +101,7 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-image: url('~/assets/images/home/HomeTestimonials.png');
+    background-image: url('~/assets/images/home/homeTestimonial.png');
     background-repeat: no-repeat;
     background-position: top left;
     background-size: 100% auto;
@@ -161,7 +161,7 @@ export default {
     width: 20%;
     margin-left: 20%;
     display: inline-block;
-    background-image: url('~/assets/images/home/HomeTestimonials2.png');
+    background-image: url('~/assets/images/home/homeTestimonial2.png');
     background-repeat: no-repeat;
     background-position: top left;
     background-size: 100% auto;
