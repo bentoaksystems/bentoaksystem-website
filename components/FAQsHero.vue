@@ -7,8 +7,8 @@
         class="FAQsHero__img"
       />
       <h1>
-        <span class="FAQsHero__headline">{{ $t('faqs.headline') }}</span>
-        <span class="FAQsHero__subhead">{{ $t('faqs.subhead') }}</span>
+        <div class="FAQsHero__headline">{{ $t('faqs.headline') }}</div>
+        <div class="FAQsHero__subhead">{{ $t('faqs.subhead') }}</div>
       </h1>
     </div>
   </Container>

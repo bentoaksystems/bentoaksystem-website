@@ -23,7 +23,7 @@
     </div>
     <img
       v-if="chevron"
-      :src="require('~/assets/images/services/chevronRight.svg')"
+      :src="require('assets/images/services/chevronRight.svg')"
       class="TeamExtensionRecruitmentItem__chevron"
     />
   </div>
