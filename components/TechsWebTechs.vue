@@ -17,7 +17,7 @@ export default {
       return [
         {
           title: 'techs.frontend.title',
-          imgUrl: require('~/assets/images/techs/TechsAngular.png'),
+          imgUrl: require('~/assets/images/techs/techsAngular.png'),
           imgWidth: '200px',
           items: [
             'techs.frontend.item1',
@@ -28,7 +28,7 @@ export default {
         },
         {
           title: 'techs.backend.title',
-          imgUrl: require('~/assets/images/techs/TechsNode.png'),
+          imgUrl: require('~/assets/images/techs/techsNode.png'),
           imgWidth: '134px',
           items: [
             'techs.backend.item1',
