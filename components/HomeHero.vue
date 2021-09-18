@@ -30,7 +30,7 @@ export default {
   max-width: calc(min(#{$maxWidth}, 100vw) - 2vw);
 
   @include addSpecificity {
-    margin: 0;
+    margin: 0 auto;
     border-radius: 0;
     background-image: url('~/assets/images/home/bgHomepage.png');
     background-size: cover;
