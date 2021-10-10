@@ -69,7 +69,16 @@ export default {
     'vue-scrollto/nuxt',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
+    'nuxt-seo',
   ],
+  seo: {
+    baseUrl: 'https://bentoak.systems',
+    name: 'Bent Oak Systems',
+    title: 'Bent Oak Systems',
+    templateTitle: '%name% - %title%',
+    description: 'Global talents at a very reasonable price',
+    robots: 'index',
+  },
   robots: {
     UserAgent: '*',
     Allow: '/',
