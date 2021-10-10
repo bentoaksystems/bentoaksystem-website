@@ -51,7 +51,7 @@ $sidePadding: 12px;
         content: '';
         position: absolute;
         top: 50%;
-        left: -($gap / 2);
+        left: -math.div($gap, 2);
         transform: translate(0, -50%);
         display: block;
         width: 2px;

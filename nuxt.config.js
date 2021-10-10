@@ -54,8 +54,25 @@ export default {
     '@nuxtjs/style-resources',
     'nuxt-i18n',
     'vue-scrollto/nuxt',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
   ],
-
+  robots: {},
+  sitemap: {
+    hostname: 'https://bentoak.systems',
+    gzip: true,
+    exclude: [],
+    routes: [
+      '/AboutUs',
+      '/Services',
+      '/Services/TeamExtension',
+      '/Services/ManagedTeam',
+      '/Services/Planning',
+      '/Techs',
+      '/Careers',
+      '/FAQs',
+    ],
+  },
   i18n: {
     locales: [
       {
@@ -93,5 +110,8 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['vue-agile'],
+    extend(config, { loaders }) {
+      loaders.scss.additionalData = '@use "sass:math";'
+    },
   },
 }
