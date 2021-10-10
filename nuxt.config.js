@@ -13,8 +13,19 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Global talent at a very reasonable price!' },
-      { hid: 'keywords', name: 'keywords', content: 'MVP,startup,UI design,developer team,agile'},
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Global talent at a very reasonable price!',
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'MVP,startup,UI design,developer team,agile',
+      },
+      { hid: 'robots', name: 'robots', content: 'follow,index' },
+      { name: 'og:type', content: 'website' },
+      { hid: 'language', name: 'language', content: 'en_GB' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -59,7 +70,11 @@ export default {
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
   ],
-  robots: {},
+  robots: {
+    UserAgent: '*',
+    Allow: '/',
+    Disallow: '/users',
+  },
   sitemap: {
     hostname: 'https://bentoak.systems',
     gzip: true,
@@ -74,6 +89,9 @@ export default {
       '/Careers',
       '/FAQs',
     ],
+  },
+  router: {
+    trailingSlash: true,
   },
   googleAnalytics: {
     id: 'UA-128066601-1',
