@@ -156,6 +156,10 @@ export default {
     onSubmit() {
       this.$v.$touch()
       if (this.$v.$invalid) return
+      this.$ga.event({
+        eventCategory: 'NewCareer',
+        eventAction: 'Submit',
+      })
       const formData = this.$v.form.$model
       const files = formData.files
       delete formData.files

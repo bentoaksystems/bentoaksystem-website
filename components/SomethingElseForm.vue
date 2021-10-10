@@ -208,7 +208,10 @@ export default {
     onSubmit() {
       this.$v.$touch()
       if (this.$v.$invalid) return
-
+      this.$ga.event({
+        eventCategory: 'FAQ',
+        eventAction: 'Submit',
+      })
       db.collection('faq')
         .add(timestamped(this.$v.form.$model))
         .then(() => {

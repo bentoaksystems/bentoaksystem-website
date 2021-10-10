@@ -6,14 +6,15 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'bos-website',
+    title: 'Bent Oak Systems',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Global talent at a very reasonable price!' },
+      { hid: 'keywords', name: 'keywords', content: 'MVP,startup,UI design,developer team,agile'},
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -45,6 +46,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    '@nuxtjs/google-analytics',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -54,8 +56,28 @@ export default {
     '@nuxtjs/style-resources',
     'nuxt-i18n',
     'vue-scrollto/nuxt',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
   ],
-
+  robots: {},
+  sitemap: {
+    hostname: 'https://bentoak.systems',
+    gzip: true,
+    exclude: [],
+    routes: [
+      '/AboutUs',
+      '/Services',
+      '/Services/TeamExtension',
+      '/Services/ManagedTeam',
+      '/Services/Planning',
+      '/Techs',
+      '/Careers',
+      '/FAQs',
+    ],
+  },
+  googleAnalytics: {
+    id: 'UA-128066601-1',
+  },
   i18n: {
     locales: [
       {
@@ -93,5 +115,8 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['vue-agile'],
+    extend(config, { loaders }) {
+      loaders.scss.additionalData = '@use "sass:math";'
+    },
   },
 }
