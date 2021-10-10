@@ -46,6 +46,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
+    '@nuxtjs/google-analytics',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -73,6 +74,9 @@ export default {
       '/Careers',
       '/FAQs',
     ],
+  },
+  googleAnalytics: {
+    id: 'UA-128066601-1',
   },
   i18n: {
     locales: [

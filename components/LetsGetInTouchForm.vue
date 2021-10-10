@@ -173,8 +173,11 @@ export default {
       // ToDo connect to api / add submit validation
       this.$v.$touch()
       if (this.$v.$invalid) return
-
-      this.apiAtWork = true;
+      this.$ga.event({
+        eventCategory: 'GetInTouch',
+        eventAction: 'Submit',
+      })
+      this.apiAtWork = true
       db.collection('inquiry')
         .add(timestamped(this.$v.form.$model))
         .then(() => {
