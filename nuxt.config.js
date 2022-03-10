@@ -59,7 +59,9 @@ export default {
     '@nuxt/typescript-build',
     '@nuxtjs/google-analytics',
   ],
-
+  generate: {
+    crawler: true,
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/content
@@ -142,6 +144,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ['vue-agile'],
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     extend(config, { loaders }) {
       loaders.scss.additionalData = '@use "sass:math";'
     },
