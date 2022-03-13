@@ -85,6 +85,7 @@ export default {
     UserAgent: '*',
     Allow: '/',
     Disallow: '/users',
+    Sitemap: 'https://bentoak.systems/sitemap.xml',
   },
   sitemap: {
     hostname: 'https://bentoak.systems',
